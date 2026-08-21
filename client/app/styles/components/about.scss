@@ -1,0 +1,74 @@
+@use '../abstracts/breakpoints' as *;
+
+.about-page {
+  width: 100%;
+}
+
+.about-section {
+  width: 100%;
+}
+
+.about-story {
+  position: relative;
+  width: 100%;
+  background: var(--navy-deep);
+  padding-block: 4rem;
+
+  @include media-min-lg {
+    padding-block: 6rem;
+  }
+}
+
+.about-story-container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+
+  @include media-min-sm {
+    padding-inline: 1.5rem;
+  }
+
+  @include media-min-lg {
+    padding-inline: 2rem;
+    grid-template-columns: 0.7fr 1.1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+}
+
+.about-story-heading {
+  // groups eyebrow + title so the left column can be extended later
+  // (e.g. a stat or CTA) without touching the grid layout
+}
+
+.about-story-eyebrow {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-cyan);
+}
+
+.about-story-title {
+  margin-top: 1rem;
+  font-family: var(--font-serif, serif);
+  line-height: 1.15;
+  color: var(--foreground);
+}
+
+.about-story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-story-paragraph {
+  line-height: 1.75;
+  color: var(--muted-foreground);
+}
+
+.about-story-paragraph--emphasis {
+  font-style: italic;
+ color: var(--muted-foreground);
+}

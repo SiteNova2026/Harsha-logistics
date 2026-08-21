@@ -1,0 +1,8 @@
+@use '../abstracts/breakpoints' as *;
+
+a,
+button {
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}

@@ -1,10 +1,10 @@
+import Hero from "@/components/home/Hero";
+import "./styles/components/home.scss";
 
-export default function Home() {
+export default function HomePage() {
   return (
-     <main className="flex min-h-screen items-center justify-center bg-gray-900">
-      <h1 className="text-5xl font-bold text-white">
-       Harsha Logistic
-      </h1>
-    </main>
+    <div className="home-page">
+      <Hero />
+    </div>
   );
 }

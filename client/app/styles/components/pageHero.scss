@@ -1,0 +1,96 @@
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--navy-deep);
+
+  &-image {
+    object-fit: cover;
+  }
+
+  &-wash {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      color-mix(in oklab, var(--navy-deep) 100%, transparent),
+      color-mix(in oklab, var(--navy-deep) 68%, transparent),
+      color-mix(in oklab, var(--navy-deep) 35%, transparent)
+    );
+  }
+
+  &-content {
+    position: relative;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+
+    @media (min-width: 640px) {
+      padding-inline: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      padding-inline: 2rem;
+      padding-top: 11rem;
+    }
+  }
+
+  &-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  &-crumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &-divider {
+    color: color-mix(in oklab, var(--muted-foreground) 60%, transparent);
+  }
+
+  &-crumb-link {
+    color: var(--muted-foreground);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--foreground);
+    }
+  }
+
+  &-crumb-current {
+    color: var(--accent-cyan);
+  }
+
+  &-eyebrow {
+    margin-top: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--accent-cyan);
+  }
+
+  &-title {
+    margin-top: 1rem;
+    max-width: 55rem;
+    font-family: var(--font-serif, serif);
+    line-height: 1.1;
+    color: var(--foreground);
+  }
+
+  &-description {
+    margin-top: 1.5rem;
+    max-width: 44rem;
+    line-height: 1.7;
+    color: var(--muted-foreground);
+
+    
+  }
+}

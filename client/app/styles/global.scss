@@ -1,0 +1,44 @@
+@use './abstracts/variables';
+@use './abstracts/breakpoints';
+@use './include/input.scss';
+
+:root{
+    --radius: .5rem;
+    --navy-deep: oklch(20% .08 260);
+    --navy: oklch(28% .11 260);
+    --brand: oklch(45% .17 255);
+    --brand-light: oklch(68% .14 240);
+    --sky: oklch(86% .06 235);
+    --accent-cyan: oklch(85% .16 195);
+    --background: oklch(20% .08 260);
+    --foreground: oklch(99% .005 240);
+    --card: oklch(24% .09 260);
+    --card-foreground: oklch(99% .005 240);
+    --popover: oklch(24% .09 260);
+    --popover-foreground: oklch(99% .005 240);
+    --primary: oklch(85% .16 195);
+    --primary-foreground: oklch(20% .08 260);
+    --secondary: oklch(24% .09 260);
+    --secondary-foreground: oklch(99% .005 240);
+    --muted: oklch(26% .09 260);
+    --muted-foreground: oklch(78% .04 240);
+    --accent: oklch(85% .16 195);
+    --accent-foreground: oklch(20% .08 260);
+    --destructive: oklch(58% .22 27);
+    --destructive-foreground: oklch(99% .005 240);
+    --border: oklch(100% 0 0 / .1);
+    --input: oklch(100% 0 0 / .14);
+    --ring: oklch(85% .16 195);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  .c-width{
+    max-width: 85%;
+    margin: auto;
+  }
+}
