@@ -1,17 +1,18 @@
 import Link from 'next/link';
+import { siteCopy } from '@/lib/constants/siteCopy';
 
 export default function PageCTA({
   href = '/quote',
-  label = 'Request a quote',
+  label = siteCopy.services.ctaButton,
 }: {
   href?: string;
   label?: string;
 }) {
   return (
-    <div className="mt-16 text-center">
+    <div className="page-cta">
       <Link
         href={href}
-        className="inline-flex items-center justify-center rounded-full bg-[var(--color-primary-mid)] px-6 py-3 text-sm font-medium text-white transition hover:bg-[var(--color-btn-hover)]"
+        className="page-cta-link normal-small"
       >
         {label}
       </Link>

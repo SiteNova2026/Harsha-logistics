@@ -1,7 +1,118 @@
+@use '../abstracts/breakpoints' as *;
+
 .quote-page {
   width: 100%;
-}
 
-.quote-layout {
-  width: 100%;
+  .quote-layout {
+    width: 100%;
+    background: var(--navy-deep);
+    padding-block: 4rem 6rem;
+  }
+
+  .quote-form-container {
+    max-width: 53rem;
+  }
+
+  .quote-form {
+    padding: 1.5rem;
+    border: 1px solid oklch(100% 0 0 / 0.1);
+    border-radius: var(--radius);
+    background: oklch(24% 0.09 260 / 0.72);
+
+    @include media-min-md-x {
+      padding: 2rem;
+    }
+  }
+
+  .quote-user-section,
+  .quote-freight-section {
+    min-width: 0;
+    padding: 0 0 1.5rem;
+  }
+
+  .quote-freight-section {
+    padding-top: 1.5rem;
+  }
+
+  .quote-section-heading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 15px 0;
+    color: var(--foreground);
+    border: 0;
+    border-bottom: 1px solid oklch(100% 0 0 / 0.1);
+  }
+
+  .quote-section-icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--accent-cyan);
+    border-radius: 50%;
+    color: var(--accent-cyan);
+  }
+
+  .quote-section-title {
+    font-family: var(--font-serif, serif);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .quote-fields {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 1.35rem;
+  }
+
+  .quote-fields-company {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-fields-user,
+  .quote-fields-route {
+    grid-template-columns: 1fr;
+
+    @include media-min-md-x {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .quote-fields-dimensions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @include media-min-md-x {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .quote-field {
+    min-width: 0;
+    display: grid;
+    gap: 0.45rem;
+    color: var(--muted-foreground);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .quote-submit {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.25rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--accent-cyan);
+    color: var(--primary-foreground);
+    cursor: pointer;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .quote-submit:disabled {
+    cursor: wait;
+    opacity: 0.65;
+  }
+
 }

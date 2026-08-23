@@ -1,19 +1,18 @@
 import Link from "next/link";
+import { siteCopy } from "@/lib/constants/siteCopy";
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-50 px-6">
-      <div className="max-w-md text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-600">404</p>
-        <h1 className="mt-4 text-4xl font-bold text-slate-900">Page not found</h1>
-        <p className="mt-4 text-lg text-slate-600">
-          The page you are looking for may have moved or no longer exists.
-        </p>
+    <div className="not-found-page">
+      <div className="not-found-content">
+        <p className="not-found-code normal-xsmall">{siteCopy.notFound.code}</p>
+        <h1 className="not-found-title title-3xl">{siteCopy.notFound.title}</h1>
+        <p className="not-found-description normal-lg">{siteCopy.notFound.description}</p>
         <Link
           href="/"
-          className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+          className="not-found-link normal-small"
         >
-          Back to home
+          {siteCopy.notFound.back}
         </Link>
       </div>
     </div>

@@ -1,7 +1,116 @@
+@use '../abstracts/breakpoints' as *;
+
 .contact-page {
   width: 100%;
-}
 
-.contact-layout {
-  width: 100%;
+  .contact-layout {
+    width: 100%;
+    background: var(--navy-deep);
+    padding-block: 4rem 6rem;
+  }
+
+  .contact-layout-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    @include media-min-lg {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+  }
+
+  .contact-eyebrow,
+  .contact-detail-label,
+  .contact-field {
+    color: var(--muted-foreground);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .contact-title {
+    max-width: 32rem;
+    margin: 1rem 0 0;
+    color: var(--foreground);
+    font-family: var(--font-serif, serif);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .contact-detail-list {
+    display: grid;
+    gap: 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .contact-detail-label {
+    margin: 0 0 0.5rem;
+  }
+
+  .contact-detail-value {
+    display: block;
+    margin: 0.15rem 0 0;
+    color: var(--foreground);
+    line-height: 1.55;
+    text-decoration: none;
+  }
+
+  .contact-detail a:hover {
+    color: var(--accent-cyan);
+  }
+
+  .contact-form {
+    padding: 2rem;
+    border: 1px solid oklch(100% 0 0 / 0.12);
+    border-radius: var(--radius);
+    background: oklch(24% 0.09 260 / 0.55);
+
+    @include media-min-md-x {
+      padding: 2.5rem;
+    }
+  }
+
+  .contact-form-title {
+    margin: 0;
+    color: var(--foreground);
+    font-family: var(--font-serif, serif);
+    font-weight: 400;
+  }
+
+  .contact-form-intro {
+    margin: 0.5rem 0 0;
+    color: var(--muted-foreground);
+  }
+
+  .contact-form-fields {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .contact-field {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .contact-submit {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.5rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--accent-cyan);
+    color: var(--primary-foreground);
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .contact-submit:disabled {
+    cursor: wait;
+    opacity: 0.65;
+  }
+
 }
