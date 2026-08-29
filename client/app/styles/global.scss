@@ -77,9 +77,9 @@ body {
 }
 
 .site-nav-link {
-  color: var(--muted-foreground);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  color: var(--text-white-85);
+  font-weight: 600;
+  letter-spacing: 0.20em;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.2s ease;
@@ -98,14 +98,13 @@ body {
   background: var(--accent-cyan);
   color: var(--primary-foreground);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.20em;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .site-quote-link {
   padding: 0.625rem 1.5rem;
-  box-shadow: 0 0 20px color-mix(in oklab, var(--accent-cyan) 35%, transparent);
 }
 
 .mobile-menu {

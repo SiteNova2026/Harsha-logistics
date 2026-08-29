@@ -1,70 +1,5 @@
 @use '../abstracts/breakpoints' as *;
 
-
-.title-9xl {
-    font-size: 3.5rem;
-
-    @include media-min-md {
-        font-size: 5rem;
-    }
-
-    @include media-min-lg {
-        font-size: 7rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 9rem;
-    }
-}
-
-.title-8xl {
-    font-size: 3rem;
-
-    @include media-min-md {
-        font-size: 4.5rem;
-    }
-
-    @include media-min-lg {
-        font-size: 6rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 8rem;
-    }
-}
-
-.title-7xl {
-    font-size: 2.8rem;
-
-    @include media-min-md {
-        font-size: 4rem;
-    }
-
-    @include media-min-lg {
-        font-size: 5.2rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 6.5rem;
-    }
-}
-
-.title-6xl {
-    font-size: 2.5rem;
-
-    @include media-min-md {
-        font-size: 3.5rem;
-    }
-
-    @include media-min-lg {
-        font-size: 4.5rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 5.5rem;
-    }
-}
-
 .title-5xl {
     font-size: 3rem;
 
@@ -77,21 +12,6 @@
     }
 }
 
-.title-4xl {
-    font-size: 2rem;
-
-    @include media-min-md {
-        font-size: 2.6rem;
-    }
-
-    @include media-min-lg {
-        font-size: 3.2rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 3.8rem;
-    }
-}
 
 .title-3xl {
     font-size: 1.8rem;
@@ -109,21 +29,6 @@
     }
 }
 
-.title-2xl {
-    font-size: 20px;
-
-    @include media-min-md {
-        font-size: 25px;
-    }
-
-    @include media-min-lg {
-        font-size: 30px;
-    }
-
-    @include media-min-3-xl {
-        font-size: 32px;
-    }
-}
 
 .title-xl {
     font-size: 1.2rem;
@@ -174,90 +79,23 @@
 }
 
 .normal-small {
-    font-size: 0.8rem;
-
-    @include media-min-md {
-        font-size: 0.9rem;
-    }
-
-    @include media-min-lg {
-        font-size: 1rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 1.2rem;
-    }
-}
-
-.normal-s {
-    font-size: 0.83rem;
-
-    @include media-min-md {
-        font-size: 0.93rem;
-    }
-
-    @include media-min-lg {
-        font-size: 1.03rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 1.03rem;
-    }
-}
-
-.normal-x {
     font-size: 0.7rem;
 
     @include media-min-md {
-        font-size: 0.8rem;
-    }
-
-    @include media-min-lg {
         font-size: 0.9rem;
     }
 
-    @include media-min-3-xl {
+    @include media-min-lg {
         font-size: 1rem;
     }
 }
 
+
 .normal-xsmall {
-    font-size: 0.68rem;
-
-    @include media-min-md {
-        font-size: 0.7rem;
-    }
-
-    @include media-min-lg {
-        font-size: 0.8rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 0.9rem;
-    }
-}
-
-.normal-xxsmall {
     font-size: 0.6rem;
 
-    @include media-min-lg {
-        font-size: 0.7rem;
-    }
-
-    @include media-min-3-xl {
-        font-size: 0.8rem;
-    }
-}
-
-.normal-xxxsmall {
-    font-size: 0.45rem;
-
     @include media-min-md {
-        font-size: 0.5rem;
-    }
-
-    @include media-min-lg {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
     }
 
     @include media-min-3-xl {

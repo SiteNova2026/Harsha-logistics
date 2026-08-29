@@ -39,9 +39,9 @@ export default function PageHero({
         <nav className="page-hero-breadcrumbs">
           {breadcrumbs.map((crumb, i) => (
             <span key={crumb.label} className="page-hero-crumb normal-xsmall">
-              {i > 0 && <span className="page-hero-divider normal-xsmall">/</span>}
+              {i > 0 && <span className="page-hero-divider normal-xxsmall">/</span>}
               {crumb.href ? (
-                <p className="page-hero-crumb-link cursor-pointer normal-xsmall">
+                <p className="page-hero-crumb-link cursor-pointer normal-xxxsmall">
                   {crumb.label}
                 </p>
               ) : (

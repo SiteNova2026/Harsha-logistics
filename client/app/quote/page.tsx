@@ -7,7 +7,7 @@ export default function QuotePage() {
   return (
     <div className="quote-page">
       <PageHeader
-      breadcrumbs={[{ label: "Home", href: "/" }, { label: quoteCopy.hero.eyebrow }]}
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: 'Quote' }]}
        eyebrow={quoteCopy.hero.eyebrow}
        title={quoteCopy.hero.title}
        description={quoteCopy.hero.description}

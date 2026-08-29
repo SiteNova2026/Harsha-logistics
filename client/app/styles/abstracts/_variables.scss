@@ -25,4 +25,6 @@
     --border: oklch(100% 0 0 / .1);
     --input: oklch(100% 0 0 / .14);
     --ring: oklch(85% .16 195);
+    --text-white-85:color-mix(in oklab, var(--color-white) 85%, transparent);
+    
 }

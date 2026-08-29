@@ -36,11 +36,11 @@ export default function Header() {
             height={28}
             className="site-brand-logo"
           />
-          <div className="site-brand-copy">
+          <div className="site-brand-copy md:hidden lg:block">
             <div className="site-brand-name normal-xsmall">
               {company.shortName}
             </div>
-            <div className="site-brand-tagline normal-xxsmall">
+            <div className="site-brand-tagline normal-xsmall">
               {siteCopy.brand.logistics}
             </div>
           </div>

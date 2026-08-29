@@ -56,7 +56,7 @@ export default function MobileMenu() {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "mobile-menu-link normal-small",
+                    "mobile-menu-link normal-xsmall",
                     isActive
                       ? "mobile-menu-link-active"
                       : ""
