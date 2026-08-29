@@ -89,7 +89,17 @@
         font-size: 1rem;
     }
 }
+.normal-smallx {
+    font-size: 0.7rem;
 
+    @include media-min-md {
+        font-size: 0.8rem;
+    }
+
+    @include media-min-lg {
+        font-size: 0.85rem;
+    }
+}
 
 .normal-xsmall {
     font-size: 0.6rem;

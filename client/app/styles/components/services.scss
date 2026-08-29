@@ -33,6 +33,19 @@
     border-radius: var(--radius);
     background: oklch(24% 0.09 260 / 0.55);
     box-sizing: border-box;
+    box-shadow: 0 0 0 oklch(0 0 0 / 0);
+    transition: border-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+
+    &:hover {
+      border: 1px solid color-mix(in srgb, var(--accent-cyan) 40%, transparent);
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-cyan) 25%, transparent),
+        0 8px 18px color-mix(in srgb, var(--accent-cyan) 12%, transparent);
+
+      .service-card-icon {
+        transform: rotate(10deg);
+      }
+    }
   }
 
   .service-card-icon {
@@ -43,6 +56,8 @@
     border: 1px solid oklch(100% 0 0 / 0.12);
     border-radius: var(--radius);
     color: var(--accent-cyan);
+    background-color: var(--navy-deep);
+    transition: transform 0.28s ease, border-color 0.28s ease;
   }
 
   .service-card-icon-svg {

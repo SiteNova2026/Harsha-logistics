@@ -1,5 +1,5 @@
 export const servicesCopy = {
-  hero: { eyebrow: "Services", title: "Strength beyond borders", description: "Six tightly-integrated services covering every leg of your shipment — from port call to final mile." },
+  hero: { eyebrow: "Services", title: "Strength beyond borders.", description: "Six tightly-integrated services covering every leg of your shipment — from port call to final mile." },
   sectionTitle: "Our services",
   requestQuote: "Request quote",
   ctaEyebrow: "Ready when you are",

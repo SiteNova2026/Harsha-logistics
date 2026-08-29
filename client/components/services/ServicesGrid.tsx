@@ -48,7 +48,7 @@ export default function ServicesGrid() {
               <p className="service-card-number normal-xsmall">{number}</p>
               <h3 className="service-card-title normal-lg ">{title}</h3>
               <p className="service-card-description normal-small">{description}</p>
-              <Link className="service-card-link normal-xsmall" href="/quote">{servicesCopy.requestQuote} <span aria-hidden="true">→</span></Link>
+              <Link className="service-card-link normal-smallx" href="/quote">{servicesCopy.requestQuote} <span aria-hidden="true">→</span></Link>
             </article>
           ))}
         </div>
