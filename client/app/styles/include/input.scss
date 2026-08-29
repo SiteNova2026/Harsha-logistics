@@ -67,19 +67,19 @@
 }
 
 .normal-md {
-    font-size: 16px;
+    font-size: 14px;
 
     @include media-min-md {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     @include media-min-lg {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
 .normal-small {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 
     @include media-min-md {
         font-size: 0.9rem;
@@ -102,4 +102,3 @@
         font-size: 0.7rem;
     }
 }
-
