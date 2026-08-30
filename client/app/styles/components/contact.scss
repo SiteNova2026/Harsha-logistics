@@ -65,7 +65,7 @@
     padding: 2rem;
     border: 1px solid oklch(100% 0 0 / 0.12);
     border-radius: var(--radius);
-    background: oklch(24% 0.09 260 / 0.55);
+    background-color: color-mix(in oklab, var(--foreground) 3%, var(--secondary));
 
     @include media-min-md-x {
       padding: 2.5rem;
@@ -111,6 +111,36 @@
   .contact-submit:disabled {
     cursor: wait;
     opacity: 0.65;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid oklch(100% 0 0 / 0.18);
+    border-radius: var(--radius);
+    background-color: oklch(20% .08 260 / 0.6);
+    color: var(--foreground);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: oklch(78% .04 240);
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: oklch(85% .16 195);
+    background-color: oklch(20% .08 260 / 0.8);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 8rem;
   }
 
 }

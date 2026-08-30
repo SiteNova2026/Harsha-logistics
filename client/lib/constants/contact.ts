@@ -14,7 +14,5 @@ export const contactCopy = {
   formIntro: "We typically reply within a few working hours.",
   fields: { name: "Full name", company: "Company", email: "Email", phone: "Phone", message: "How can we help?" },
   send: "Send enquiry",
-  sending: "Sending...",
-  sent: "Message sent",
   gstin: "GSTIN",
 };

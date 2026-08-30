@@ -6,7 +6,7 @@
   padding: 0.5rem;
   border: 2px solid var(--border);
   border-radius:5px;
-  background: var(--input);
+  background: var(--background) !important;
   color: var(--foreground);
   outline: none;
   transition: border-color 0.3s ease;

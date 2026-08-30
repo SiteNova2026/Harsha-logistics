@@ -28,6 +28,7 @@ export default function PageHero({
         src={backgroundImage}
         alt=""
         fill
+        sizes="100vw"
         priority
         placeholder={typeof backgroundImage === "string" ? undefined : "blur"}
         className="page-hero-image"

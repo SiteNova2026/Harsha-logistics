@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { siteCopy } from '@/lib/constants/siteCopy';
+import { servicesCopy } from '@/lib/constants/services';
 
 export default function PageCTA({
   href = '/quote',
-  label = siteCopy.services.ctaButton,
+  label = servicesCopy.ctaButton,
 }: {
   href?: string;
   label?: string;

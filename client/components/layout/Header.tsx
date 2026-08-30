@@ -30,11 +30,12 @@ export default function Header() {
       <div className="site-header-container c-width">
         <Link href="/" className="site-brand">
           <Image
-            src= {logo.src}
+            src={logo.src}
             alt={company.name}
             width={28}
             height={28}
             className="site-brand-logo"
+            style={{ width: "auto", height: "auto" }}
           />
           <div className="site-brand-copy md:hidden lg:block">
             <div className="site-brand-name normal-xsmall">

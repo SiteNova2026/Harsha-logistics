@@ -37,7 +37,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 1rem;
 }
 
 .site-brand {
@@ -76,7 +75,14 @@ body {
   gap: 2.5rem;
 }
 
+.site-nav-item {
+  position: relative;
+}
+
 .site-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   color: var(--text-white-85);
   font-weight: 600;
   letter-spacing: 0.20em;
@@ -87,6 +93,85 @@ body {
 
 .site-nav-link:hover,
 .site-nav-link-active {
+  color: var(--accent-cyan);
+}
+
+.site-nav-caret {
+  font-size: 0.8rem;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+.site-nav-dropdown {
+  position: relative;
+}
+
+.site-nav-dropdown:hover .site-nav-caret,
+.site-nav-dropdown:focus-within .site-nav-caret {
+  transform: translateY(-1px) rotate(180deg);
+}
+
+.site-nav-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 15rem;
+  height: 0.75rem;
+  transform: translateX(-50%);
+  z-index: 19; 
+}
+
+.site-nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 15rem;
+  padding: 0.75rem;
+  border: 1px solid color-mix(in oklab, var(--accent-cyan) 18%, transparent);
+  border-radius: var(--radius);
+  background: rgba(8, 20, 35, 0.96);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%) translateY(-0.5rem);
+  z-index: 20;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.site-nav-dropdown:hover .site-nav-dropdown-menu,
+.site-nav-dropdown:focus-within .site-nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.site-nav-dropdown:hover .site-nav-caret,
+.site-nav-dropdown:focus-within .site-nav-caret {
+  transform: translateY(-1px) rotate(180deg);
+}
+
+
+.site-nav-sub-link {
+  color: var(--text-white-85);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-nav-sub-link:hover,
+.site-nav-sub-link-active {
+  background: color-mix(in oklab, var(--accent-cyan) 12%, transparent);
   color: var(--accent-cyan);
 }
 
@@ -373,9 +458,6 @@ body {
 }
 
 @include media-min-md-x {
-  .site-header-container {
-    padding-inline: 1.5rem;
-  }
 
   .site-nav {
     display: flex;
@@ -389,12 +471,6 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  }
-}
-
-@include media-min-lg {
-  .site-header-container {
-    padding-inline: 2rem;
   }
 }
 

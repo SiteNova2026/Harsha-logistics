@@ -42,13 +42,15 @@ export default function ServicesGrid() {
       <div className="services-grid-container c-width">
         <h2 id="services-grid-title" className="sr-only">{servicesCopy.sectionTitle}</h2>
         <div className="services-grid-list">
-          {servicesCopy.items.map(([number, title, description, icon]) => (
-            <article className="service-card" key={number}>
-              <div className="service-card-icon"><ServiceIcon name={icon} /></div>
-              <p className="service-card-number normal-xsmall">{number}</p>
-              <h3 className="service-card-title normal-lg ">{title}</h3>
-              <p className="service-card-description normal-small">{description}</p>
-              <Link className="service-card-link normal-smallx" href="/quote">{servicesCopy.requestQuote} <span aria-hidden="true">→</span></Link>
+          {servicesCopy.items.map((item) => (
+            <article className="service-card" key={item.id}>
+              <div className="service-card-icon"><ServiceIcon name={item.icon} /></div>
+              <p className="service-card-number normal-xsmall">{item.id}</p>
+              <h3 className="service-card-title normal-lg ">{item.label}</h3>
+              <p className="service-card-description normal-small">{item.description}</p>
+              <Link className="service-card-link normal-smallx" href={item.href}>
+                {servicesCopy.viewService} <span aria-hidden="true">→</span>
+              </Link>
             </article>
           ))}
         </div>
