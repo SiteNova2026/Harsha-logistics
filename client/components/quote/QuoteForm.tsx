@@ -115,8 +115,8 @@ export default function QuoteForm() {
             <FreightSection key={section.key} section={section} />
           ))}
 
-          <button className="quote-submit normal-small" type="button">
-            {quoteCopy.sent }
+          <button className="quote-submit normal-small font-bold" type="button">
+            {quoteCopy.submit }
           </button>
         </form>
       </div>

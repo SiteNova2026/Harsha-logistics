@@ -1,6 +1,6 @@
 export const siteCopy = {
   brand: {
-    logistics: "Logistics & Freight",
+    logistics: "Shipping & Forwarding",
     tagline: "Serving with Pride",
   },
   navigation: {

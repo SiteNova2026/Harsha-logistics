@@ -8,8 +8,6 @@ export const quoteCopy = {
   formTitle: "Quote request form",
   userData: "User data",
   submit: "Request A Quote",
-  sending: "Sending...",
-  sent: "Quote request sent",
   successHeading: "How it works",
   successSteps: [
     "Share your route, cargo needs, and timing requirements.",

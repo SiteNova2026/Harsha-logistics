@@ -76,7 +76,7 @@ export default function ContactSection() {
             </label>
           </div>
 
-          <button className="contact-submit normal-small" type="button">
+          <button className="contact-submit normal-small font-bold" type="button">
              {contactCopy.send}
           </button>
         </form>
