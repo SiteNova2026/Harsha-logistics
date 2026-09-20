@@ -15,7 +15,8 @@ export default function Footer() {
                   src={logo.src}
                   alt={company.name}
                   width={50}
-                  height={28}
+                  height={40}
+                  style={{ width: "100%", height: "auto" }}
                 />
               </div>
             </div>

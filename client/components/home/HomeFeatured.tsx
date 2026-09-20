@@ -67,6 +67,7 @@ export default function HomeFeatured() {
                     src={serviceImages[service.href] || airImage}
                     alt={service.label}
                     fill
+                    sizes="(max-width: 767px) 86vw, (max-width: 991px) 65vw, 32vw"
                   />
                 </div>
                 <div>

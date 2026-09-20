@@ -8,6 +8,7 @@ export default function HomeHero() {
         src="/images/home-hero-ship.jpg"
         alt="Container ship crossing open water"
         fill
+        sizes="100vw"
         priority
         className="home-hero-image"
       />

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
 import "../../app/styles/components/pageHero.scss";
 

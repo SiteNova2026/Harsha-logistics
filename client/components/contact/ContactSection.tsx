@@ -1,6 +1,5 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import { company } from "@/lib/constants/company";
 import { contactCopy } from "@/lib/constants/contact";
 

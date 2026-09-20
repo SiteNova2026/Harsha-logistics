@@ -19,7 +19,11 @@ export default function RelatedServices({ items }: RelatedServicesProps) {
       <div className="related-grid">
         {items.map((item) => (
           <Link key={item.href} href={item.href} className="related-card">
-            <img src={item.image.src} alt={item.label} className="related-card-image" />
+            <Image
+              src={item.image}
+              alt={item.label}
+              className="related-card-image"
+            />
             <div className="related-card-copy">
               <h4>{item.label}</h4>
               <p>{item.description}</p>

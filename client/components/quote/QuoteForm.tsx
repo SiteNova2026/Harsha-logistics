@@ -1,6 +1,5 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import { quoteCopy } from "@/lib/constants/quote";
 
 function Field({

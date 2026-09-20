@@ -9,7 +9,7 @@ export async function POST(request: Request) {
       message: "Your message has been sent successfully.",
       data: body,
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { success: false, message: "Unable to send message." },
       { status: 400 }

@@ -32,6 +32,7 @@ export default function HomeAbout() {
             src="/images/port-cranes.jpg"
             alt="Port cranes and containers at dusk"
             fill
+            sizes="(max-width: 991px) 100vw, 50vw"
           />
         </div>
       </div>

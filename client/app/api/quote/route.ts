@@ -9,7 +9,7 @@ export async function POST(request: Request) {
       message: "Quote request received. Our team will contact you soon.",
       data: body,
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { success: false, message: "Unable to process quote request." },
       { status: 400 }
