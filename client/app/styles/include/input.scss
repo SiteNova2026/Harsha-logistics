@@ -1,5 +1,16 @@
 @use '../abstracts/breakpoints' as *;
 
+.title-10xl {
+    font-size: 13rem;
+
+    @include media-min-lg {
+        font-size: 17rem;
+    }
+
+    @include media-min-3-xl {
+        font-size: 19em;
+    }
+}
 .title-5xl {
     font-size: 3rem;
 
@@ -45,10 +56,6 @@
         font-size: 2rem;
     }
 }
-
-
-
-// ── BODY / NORMAL TEXT ───────────────────────────────────────
 
 .normal-lg {
     font-size: 1rem;

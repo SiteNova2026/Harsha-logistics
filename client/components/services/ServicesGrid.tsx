@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { servicesCopy } from "@/lib/constants/services";
 
-function ServiceIcon({ name }: { name: string }) {
+export function ServiceIcon({ name }: { name: string }) {
   const commonProps = {
     className: "service-card-icon-svg",
     viewBox: "0 0 24 24",
@@ -87,10 +87,10 @@ export default function ServicesGrid() {
                 </div>
                 <p className="service-card-number normal-xsmall">{item.id}</p>
                 <h3 className="service-card-title normal-lg ">{item.label}</h3>
-                <p className="service-card-description normal-small">
+                <p className="service-card-description normal-small font-normal">
                   {item.description}
                 </p>
-                <p className="service-card-link normal-smallx">
+                <p className="normal-smallx mt-2">
                   {servicesCopy.viewService} <span aria-hidden="true">→</span>
                 </p>
               </article>

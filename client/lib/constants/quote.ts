@@ -3,7 +3,7 @@ export const quoteCopy = {
     eyebrow: "Request a Quote",
     title: "Tell us about your cargo.",
     description:
-      "Share your shipment details and our operations desk will respond with a clear plan and competitive pricing — usually within the same working day.",
+      "Share your shipment details and our operations desk will respond with a clear plan and competitive pricing usually within the same working day.",
   },
   formTitle: "Quote request form",
   userData: "User data",

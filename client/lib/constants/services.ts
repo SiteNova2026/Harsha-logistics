@@ -1,11 +1,11 @@
 export const servicesCopy = {
-  hero: { eyebrow: "Services", title: "Strength beyond borders.", description: "Six tightly-integrated services covering every leg of your shipment — from port call to final mile." },
+  hero: { eyebrow: "Services", title: "Strength beyond borders.", description: "Six tightly-integrated services covering every leg of your shipment from port call to final mile." },
   sectionTitle: "Our services",
   requestQuote: "Request a quote",
   viewService: "View service",
   ctaEyebrow: "Ready when you are",
   ctaTitle: "Tell us about your cargo.",
-  ctaDescription: "Whether it's a single container or a multi-modal project shipment, our team will respond with a clear plan and a competitive quote — usually within the same working day.",
+  ctaDescription: "Whether it's a single container or a multi-modal project shipment, our team will respond with a clear plan and a competitive quote usually within the same working day.",
   ctaButton: "Request a quote",
   items: [
     {

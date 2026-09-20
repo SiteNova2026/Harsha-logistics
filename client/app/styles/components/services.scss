@@ -9,95 +9,6 @@
     padding-block: 4rem 6rem;
   }
 
-  .services-grid-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-
-    @include media-min-md {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @include media-min-lg {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  .service-card {
-    min-height: 17rem;
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid oklch(100% 0 0 / 0.12);
-    border-radius: var(--radius);
-    background: oklch(24% 0.09 260 / 0.55);
-    box-sizing: border-box;
-    box-shadow: 0 0 0 oklch(0 0 0 / 0);
-    transition: border-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
-
-    &:hover {
-      border: 1px solid color-mix(in srgb, var(--accent-cyan) 40%, transparent);
-      transform: translateY(-2px);
-      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-cyan) 25%, transparent),
-        0 8px 18px color-mix(in srgb, var(--accent-cyan) 12%, transparent);
-
-      .service-card-icon {
-        transform: rotate(10deg);
-      }
-    }
-  }
-
-  .service-card-icon {
-    width: 2.75rem;
-    height: 2.75rem;
-    display: grid;
-    place-items: center;
-    border: 1px solid oklch(100% 0 0 / 0.12);
-    border-radius: var(--radius);
-    color: var(--accent-cyan);
-    background-color: var(--navy-deep);
-    transition: transform 0.28s ease, border-color 0.28s ease;
-  }
-
-  .service-card-icon-svg {
-    width: 1.4rem;
-    height: 1.4rem;
-  }
-
-  .service-card-number {
-    margin: 1.25rem 0 0;
-    color: var(--accent-cyan);
-    font-weight: 700;
-    letter-spacing: 0.2em;
-  }
-
-  .service-card-title {
-    margin: 0.55rem 0 0;
-    color: var(--foreground);
-    font-family: var(--font-serif, serif);
-    font-weight: 400;
-    line-height: 1.25;
-  }
-
-  .service-card-description {
-    margin: 0.85rem 0 0;
-    color: var(--muted-foreground);
-    line-height: 1.6;
-  }
-
-  .service-card-link {
-    margin-top: auto;
-    padding-top: 1.25rem;
-    color: var(--accent-cyan);
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .service-card-link span {
-    margin-left: 0.35rem;
-  }
-
   .services-cta {
     width: 100%;
     background: var(--navy-deep);
@@ -251,6 +162,7 @@
     border-radius: 1.25rem;
     border: 1px solid var(--border);
     background: var(--secondary);
+
     @include media-min-lg {
       max-width: 500px;
     }
@@ -302,9 +214,9 @@
     border-radius: 1rem;
     background: color-mix(in oklab, var(--foreground) 3%, var(--secondary));
 
-    &:hover{
-                  border-color: 
-color-mix(in oklab, var(--accent) 40%, transparent);
+    &:hover {
+      border-color:
+        color-mix(in oklab, var(--accent) 40%, transparent);
     }
 
     h4 {
@@ -330,6 +242,7 @@ color-mix(in oklab, var(--accent) 40%, transparent);
     @include media-min-md {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
     @include media-min-lg {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }

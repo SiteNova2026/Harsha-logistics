@@ -5,7 +5,7 @@
   box-sizing: border-box;
   padding: 0.5rem;
   border: 2px solid var(--border);
-  border-radius:5px;
+  border-radius: 5px;
   background: var(--background) !important;
   color: var(--foreground);
   outline: none;
@@ -31,4 +31,97 @@ select.common-field {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+.services-grid-list {
+  display: flex;
+  // grid-template-columns: 1fr;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+
+  // @include media-min-md {
+  //   grid-template-columns: repeat(2, minmax(0, 1fr));
+  // }
+
+  // @include media-min-lg {
+  //   grid-template-columns: repeat(3, minmax(0, 1fr));
+  // }
+
+  .service-card {
+    flex:1;
+    min-height: 18rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid oklch(100% 0 0 / 0.12);
+    border-radius: var(--radius);
+    background: oklch(24% 0.09 260 / 0.55);
+    box-sizing: border-box;
+    box-shadow: 0 0 0 oklch(0 0 0 / 0);
+    transition: border-color 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease;
+
+    &:hover {
+      border: 1px solid color-mix(in srgb, var(--accent-cyan) 40%, transparent);
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-cyan) 25%, transparent),
+        0 8px 18px color-mix(in srgb, var(--accent-cyan) 12%, transparent);
+
+      .service-card-icon {
+        transform: rotate(10deg);
+      }
+    }
+  }
+
+  .service-card-icon {
+    display: grid;
+    place-items: center;
+    color: var(--accent-cyan);
+    background-color: var(--navy-deep);
+    transition: transform 0.28s ease, border-color 0.28s ease;
+  }
+
+  .service-card-icon-svg {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.40rem;
+    border: 1px solid lab(100% 0 0 / .12);
+    border-radius: var(--radius);
+  }
+
+  .service-card-number {
+    margin: 1.25rem 0 0;
+    color: var(--accent-cyan);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+
+  .service-card-title {
+    margin: 0.55rem 0 0;
+    color: var(--foreground);
+    font-family: var(--font-serif, serif);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .service-card-description {
+    margin: 0.85rem 0 0;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+  }
+
+  .service-card-link {
+    padding-top: 1.25rem;
+    color: var(--accent-cyan);
+    font-weight: 700;
+    text-decoration: none;
+    height: auto;
+    width: 30%;
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .service-card-link span {
+    margin-left: 0.35rem;
+  }
 }
