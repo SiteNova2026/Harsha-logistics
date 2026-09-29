@@ -4,17 +4,12 @@ import ServiceFeatureGrid from "@/components/services/ServiceFeatureGrid";
 import ServiceSteps from "@/components/services/ServiceSteps";
 import RelatedServices from "@/components/services/RelatedServices";
 import { RoadRailService, servicesCopy } from "@/lib/constants/services";
+import { getRelatedServices } from "@/lib/constants/relatedServices";
+import { siteCopy } from "@/lib/constants/siteCopy";
 import roadImage from "../../../public/images/container-yard.jpg";
-import shipImage from "../../../public/images/hero-ship.jpg";
-import airImage from "../../../public/images/air-freight.jpg";
-import customsImage from "../../../public/images/port-cranes.jpg";
 import "../../styles/components/services.scss";
 
-const otherServices = [
-  { label: "Ocean Freight", href: "/services/ocean-freight", image: shipImage, description: "FCL & LCL global ocean shipping." },
-  { label: "Air Freight", href: "/services/air-freight", image: airImage, description: "Priority air cargo, door to door." },
-  { label: "Customs Clearance", href: "/services/customs-clearance", image: customsImage, description: "Licensed CHA and documentation." },
-];
+const otherServices = getRelatedServices("/services/road-rail");
 
 export default function RoadRailPage() {
   const serviceData = RoadRailService[0];
@@ -26,8 +21,8 @@ export default function RoadRailPage() {
     <div className="service-page">
       <PageHeader
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
+          { label: siteCopy.navigation.home, href: "/" },
+          { label: siteCopy.navigation.services, href: "/services" },
           { label: service.label },
         ]}
         eyebrow={service.page.eyebrow}

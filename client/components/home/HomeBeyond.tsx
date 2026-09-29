@@ -7,44 +7,15 @@ import dataImage from "../../public/images/other-data.jpg";
 import aeoImage from "../../public/images/other-aeo.jpg";
 import licensingImage from "../../public/images/other-licenses.jpg";
 import storageImage from "../../public/images/other-storage.jpg";
+import { homeCopy } from "@/lib/constants/home";
 
-const services = [
-  {
-    title: "EXIM Consultancy Services",
-    description:
-      "Advisory on trade policy, incoterms, licensing and compliance for importers and exporters.",
-    icon: "consultancy",
-    image: otherConsultancyImage,
-  },
-  {
-    title: "PAN India EXIM Data Services",
-    description:
-      "Market and shipment data across Indian ports to help you benchmark rates and find buyers.",
-    icon: "data",
-    image: dataImage,
-  },
-  {
-    title: "AEO Authorisation",
-    description:
-      "End-to-end support in obtaining and maintaining Authorised Economic Operator status.",
-    icon: "aeo",
-    image: aeoImage,
-  },
-  {
-    title: "Commodity & Duty Supported Licensese",
-    description:
-      "Assistance with advance authorisation, EPCG, MEIS/RoDTEP and commodity-specific permits.",
-    icon: "licensing",
-    image: licensingImage,
-  },
-  {
-    title: "Storage & Distribution Services",
-    description:
-      "Nationwide storage, order fulfilment and last-mile distribution for imported stock.",
-    icon: "storage",
-    image: storageImage,
-  },
-];
+const serviceImages = {
+  consultancy: otherConsultancyImage,
+  data: dataImage,
+  aeo: aeoImage,
+  licensing: licensingImage,
+  storage: storageImage,
+};
 
 function ServiceIcon({ name }: { name: string }) {
   const paths = {
@@ -126,40 +97,39 @@ export default function HomeBeyond() {
       <div className="home-shell c-width">
         <div className="home-section-heading">
           <div>
-            <p className="home-kicker-1 normal-xsmall">Other services</p>
-            <h2 className="title-3xl">Beyond the freight</h2>
+            <p className="home-kicker-1 normal-xsmall">{homeCopy.beyond.eyebrow}</p>
+            <h2 className="title-3xl">{homeCopy.beyond.title}</h2>
           </div>
           <p className="normal-small">
-            Consultancy, data and compliance support that helps Indian importers
-            and exporters trade smarter not just ship faster.
+            {homeCopy.beyond.description}
           </p>
         </div>
         <div className="home-beyond-carousel">
           <div
             className="home-beyond-controls"
-            aria-label="Other services carousel controls"
+            aria-label={homeCopy.beyond.controlsLabel}
           >
             <button
               type="button"
               onClick={() => scrollCarousel(-1)}
-              aria-label="Previous other service"
+              aria-label={homeCopy.beyond.previous}
             >
               <span aria-hidden="true">←</span>
             </button>
             <button
               type="button"
               onClick={() => scrollCarousel(1)}
-              aria-label="Next other service"
+              aria-label={homeCopy.beyond.next}
             >
               <span aria-hidden="true">→</span>
             </button>
           </div>
           <div className="home-beyond-grid" ref={carouselRef}>
-            {services.map((service, index) => (
+            {homeCopy.beyond.items.map((service, index) => (
               <article key={service.title} className="home-beyond-card">
                 <div
                   className={`home-beyond-image home-beyond-image-${index + 1}`}
-                  style={{ backgroundImage: `url(${service.image.src})` }}
+                  style={{ backgroundImage: `url(${serviceImages[service.icon as keyof typeof serviceImages].src})` }}
                 >
                   <span className="home-beyond-icon" aria-hidden="true">
                     <ServiceIcon name={service.icon} />
@@ -167,11 +137,10 @@ export default function HomeBeyond() {
                 </div>
                 <h3 className="normal-lg">{service.title}</h3>
                 <p className="normal-small">
-                  Advisory and practical support for confident international
-                  trade.
+                  {homeCopy.beyond.cardDescription}
                 </p>
                 <Link href="/contact" className="normal-xsmall">
-                  Talk to us →
+                  {homeCopy.beyond.contactLink} →
                 </Link>
               </article>
             ))}

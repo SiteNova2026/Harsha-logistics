@@ -3,6 +3,7 @@ export const servicesCopy = {
   sectionTitle: "Our services",
   requestQuote: "Request a quote",
   viewService: "View service",
+  relatedServicesTitle: "Other services",
   ctaEyebrow: "Ready when you are",
   ctaTitle: "Tell us about your cargo.",
   ctaDescription: "Whether it's a single container or a multi-modal project shipment, our team will respond with a clear plan and a competitive quote usually within the same working day.",

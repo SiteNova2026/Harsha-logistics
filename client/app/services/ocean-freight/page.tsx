@@ -4,17 +4,12 @@ import ServiceFeatureGrid from "@/components/services/ServiceFeatureGrid";
 import ServiceSteps from "@/components/services/ServiceSteps";
 import RelatedServices from "@/components/services/RelatedServices";
 import { OceanFreight, servicesCopy } from "@/lib/constants/services";
+import { getRelatedServices } from "@/lib/constants/relatedServices";
+import { siteCopy } from "@/lib/constants/siteCopy";
 import shipImage from "../../../public/images/svc-ocean.jpg";
-import roadImage from "../../../public/images/container-yard.jpg";
-import airImage from "../../../public/images/air-freight.jpg";
-import customsImage from "../../../public/images/port-cranes.jpg";
 import "../../styles/components/services.scss";
 
-const otherServices = [
-  { label: "Air Freight", href: "/services/air-freight", image: airImage, description: "Priority air cargo, door to door." },
-  { label: "Road & Rail", href: "/services/road-rail", image: roadImage, description: "Domestic & cross-border transport." },
-  { label: "Customs Clearance", href: "/services/customs-clearance", image: customsImage, description: "Licensed CHA and documentation." },
-];
+const otherServices = getRelatedServices("/services/ocean-freight");
 
 export default function OceanFreightPage() {
   const oceanFreight = OceanFreight[0];
@@ -26,8 +21,8 @@ export default function OceanFreightPage() {
     <div className="service-page">
       <PageHeader
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
+          { label: siteCopy.navigation.home, href: "/" },
+          { label: siteCopy.navigation.services, href: "/services" },
           { label: service.label },
         ]}
         eyebrow={service.page.eyebrow}

@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+import { servicesCopy } from "@/lib/constants/services";
 
 type ServiceIntroProps = {
   eyebrow: string;
@@ -21,7 +22,7 @@ export default function ServiceIntro({
         <h2>{title}</h2>
         <p>{description}</p>
         <Link href="/quote" className="service-cta-button">
-          Request a quote
+          {servicesCopy.requestQuote}
         </Link>
       </div>
 

@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
 
         <div className="site-footer-bottom normal-small">
-          <p>© 2026 {company.name}. {siteCopy.footer.copyright}</p>
+          <p>© {new Date().getFullYear()} {company.name}. {siteCopy.footer.copyright}</p>
           <p>{siteCopy.brand.tagline}</p>
         </div>
       </div>

@@ -1,32 +1,4 @@
-const partners = [
-  {
-    code: "TH",
-    country: "Thailand",
-    company: "BANGKOK FREIGHT ALLIANCE",
-    description:
-      "Ocean and air consolidation partner covering Laem Chabang and Bangkok airport, with weekly LCL boxes to Chennai.",
-    locations: "Bangkok · Laem Chabang",
-    route: "Laem Chabang → Chennai · Bangkok → Chennai (Air)",
-  },
-  {
-    code: "ID",
-    country: "Indonesia",
-    company: "NUSANTARA CARGO SERVICES",
-    description:
-      "Full-service agent for FCL, LCL and customs brokerage across Tanjung Priok and Semarang.",
-    locations: "Jakarta · Semarang",
-    route: "Jakarta → Chennai · Semarang → Tuticorin",
-  },
-  {
-    code: "RU",
-    country: "Russia",
-    company: "VOSTOK LOGISTICS GROUP",
-    description:
-      "Multimodal partner handling sea-rail movements and inland distribution across the Russian Federation.",
-    locations: "Vladivostok · Moscow",
-    route: "Vladivostok → Chennai · Moscow (Rail-Sea)",
-  },
-];
+import { homeCopy } from "@/lib/constants/home";
 
 function NetworkIcon({ type }: { type: "location" | "route" }) {
   return (
@@ -64,17 +36,16 @@ export default function HomeNetwork() {
         <div className="home-section-heading home-section-heading-light">
           <div>
             <p className="home-kicker-1 normal-xsmall">
-              Trusted partnership companies
+              {homeCopy.network.eyebrow}
             </p>
-            <h2 className="title-3xl">A network you can rely on</h2>
+            <h2 className="title-3xl">{homeCopy.network.title}</h2>
           </div>
           <p className="normal-small">
-            Our overseas agents act as our own offices, handling bookings,
-            customs and delivery at origin and destination.
+            {homeCopy.network.description}
           </p>
         </div>
         <div className="home-network-grid">
-          {partners.map((partner) => (
+          {homeCopy.network.partners.map((partner) => (
             <div className="home-network-card" key={partner.country}>
               <div className="home-network-card-heading">
                 <strong className="normal-small">{partner.code}</strong>

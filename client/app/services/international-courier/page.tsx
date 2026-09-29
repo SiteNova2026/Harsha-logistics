@@ -4,17 +4,12 @@ import ServiceFeatureGrid from "@/components/services/ServiceFeatureGrid";
 import ServiceSteps from "@/components/services/ServiceSteps";
 import RelatedServices from "@/components/services/RelatedServices";
 import { InternationalCourierService, servicesCopy } from "@/lib/constants/services";
+import { getRelatedServices } from "@/lib/constants/relatedServices";
+import { siteCopy } from "@/lib/constants/siteCopy";
 import courierImage from "../../../public/images/svc-courier.jpg";
-import shipImage from "../../../public/images/hero-ship.jpg";
-import airImage from "../../../public/images/air-freight.jpg";
-import warehouseImage from "../../../public/images/svc-warehouse.jpg";
 import "../../styles/components/services.scss";
 
-const otherServices = [
-  { label: "Ocean Freight", href: "/services/ocean-freight", image: shipImage, description: "FCL & LCL global ocean shipping." },
-  { label: "Air Freight", href: "/services/air-freight", image: airImage, description: "Priority air cargo, door to door." },
-  { label: "Warehouse", href: "/services/warehouse", image: warehouseImage, description: "Storage, handling and distribution." },
-];
+const otherServices = getRelatedServices("/services/international-courier");
 
 export default function InternationalCourierPage() {
   const serviceData = InternationalCourierService[0];
@@ -26,8 +21,8 @@ export default function InternationalCourierPage() {
     <div className="service-page">
       <PageHeader
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
+          { label: siteCopy.navigation.home, href: "/" },
+          { label: siteCopy.navigation.services, href: "/services" },
           { label: service.label },
         ]}
         eyebrow={service.page.eyebrow}

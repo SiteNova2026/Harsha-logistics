@@ -1,19 +1,18 @@
 import Link from "next/link";
 import { servicesCopy } from "@/lib/constants/services";
 import { ServiceIcon } from "@/components/services/ServicesGrid";
+import { homeCopy } from "@/lib/constants/home";
 export default function HomeServices() {
   return (
     <section className="home-section home-section-dark home-services-intro">
       <div className="home-shell c-width">
         <div className="home-section-heading">
           <div>
-            <p className="home-kicker-1 normal-xsmall">Our services</p>
-            <h2 className="title-3xl">Strength beyond borders</h2>
+            <p className="home-kicker-1 normal-xsmall">{homeCopy.services.eyebrow}</p>
+            <h2 className="title-3xl">{homeCopy.services.title}</h2>
           </div>
           <p className="normal-small">
-            An integrated suite of shipping, customs and freight forwarding
-            services working in synergy to keep your cargo moving across
-            oceans, skies and ports.
+            {homeCopy.services.description}
           </p>
         </div>
         <div className="services-grid-list">

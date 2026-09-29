@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { siteCopy } from "@/lib/constants/siteCopy";
 import "./globals.css";
 import "./styles/global.scss";
 
@@ -16,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Harsha Logistics",
-  description: "Reliable freight and logistics services for growing businesses.",
+  title: siteCopy.metadata.title,
+  description: siteCopy.metadata.description,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

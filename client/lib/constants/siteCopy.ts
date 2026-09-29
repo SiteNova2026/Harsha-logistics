@@ -1,4 +1,8 @@
 export const siteCopy = {
+  metadata: {
+    title: "Harsha Logistics",
+    description: "Reliable freight and logistics services for growing businesses.",
+  },
   brand: {
     logistics: "Shipping & Forwarding",
     tagline: "Serving with Pride",
@@ -9,9 +13,11 @@ export const siteCopy = {
     services: "Services",
     contact: "Contact",
     quote: "Get Quote",
+    quoteBreadcrumb: "Quote",
     open: "Open menu",
     close: "Close menu",
   },
+  breadcrumbSeparator: "/",
   footer: {
     description: "a Chennai based shipping agency and customs house, serving Indian importers and exporters with pride since 2011.",
     explore: "Explore",

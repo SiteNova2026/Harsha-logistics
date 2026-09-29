@@ -4,17 +4,12 @@ import ServiceFeatureGrid from "@/components/services/ServiceFeatureGrid";
 import ServiceSteps from "@/components/services/ServiceSteps";
 import RelatedServices from "@/components/services/RelatedServices";
 import { CustomsClearanceService, servicesCopy } from "@/lib/constants/services";
+import { getRelatedServices } from "@/lib/constants/relatedServices";
+import { siteCopy } from "@/lib/constants/siteCopy";
 import customsImage from "../../../public/images/svc-customs.jpg";
-import shipImage from "../../../public/images/hero-ship.jpg";
-import airImage from "../../../public/images/air-freight.jpg";
-import roadImage from "../../../public/images/container-yard.jpg";
 import "../../styles/components/services.scss";
 
-const otherServices = [
-  { label: "Ocean Freight", href: "/services/ocean-freight", image: shipImage, description: "FCL & LCL global ocean shipping." },
-  { label: "Air Freight", href: "/services/air-freight", image: airImage, description: "Priority air cargo, door to door." },
-  { label: "Road & Rail", href: "/services/road-rail", image: roadImage, description: "Domestic & cross-border transport." },
-];
+const otherServices = getRelatedServices("/services/customs-clearance");
 
 export default function CustomsClearancePage() {
   const serviceData = CustomsClearanceService[0];
@@ -26,8 +21,8 @@ export default function CustomsClearancePage() {
     <div className="service-page">
       <PageHeader
         breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
+          { label: siteCopy.navigation.home, href: "/" },
+          { label: siteCopy.navigation.services, href: "/services" },
           { label: service.label },
         ]}
         eyebrow={service.page.eyebrow}

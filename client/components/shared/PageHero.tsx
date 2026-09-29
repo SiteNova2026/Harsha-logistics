@@ -1,4 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
+import { siteCopy } from "@/lib/constants/siteCopy";
 import "../../app/styles/components/pageHero.scss";
 
 type Crumb = {
@@ -39,7 +40,7 @@ export default function PageHero({
         <nav className="page-hero-breadcrumbs">
           {breadcrumbs.map((crumb, i) => (
             <span key={crumb.label} className="page-hero-crumb normal-xsmall">
-              {i > 0 && <span className="page-hero-divider normal-xxsmall">/</span>}
+              {i > 0 && <span className="page-hero-divider normal-xxsmall">{siteCopy.breadcrumbSeparator}</span>}
               {crumb.href ? (
                 <p className="page-hero-crumb-link cursor-pointer normal-xxxsmall">
                   {crumb.label}

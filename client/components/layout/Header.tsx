@@ -1,11 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { company } from "@/lib/constants/company";
 import Navbar from "@/components/layout/Navbar";
-import logo from '../../public/images/logo.png';
 import MobileMenu from "@/components/layout/MobileMenu";
 import { siteCopy } from "@/lib/constants/siteCopy";
 
@@ -29,15 +27,7 @@ export default function Header() {
     >
       <div className="site-header-container c-width">
         <Link href="/" className="site-brand">
-          <Image
-            src={logo.src}
-            alt={company.name}
-            width={28}
-            height={28}
-            className="site-brand-logo"
-            style={{ width: "auto", height: "auto" }}
-          />
-          <div className="site-brand-copy md:hidden lg:block">
+          <div className="site-brand-copy block">
             <div className="site-brand-name normal-xsmall">
               {company.shortName}
             </div>
