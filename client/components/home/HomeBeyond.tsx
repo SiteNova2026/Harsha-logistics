@@ -95,7 +95,7 @@ export default function HomeBeyond() {
   return (
     <section className="home-section home-section-blue home-beyond">
       <div className="home-shell c-width">
-        <div className="home-section-heading">
+        <div className="home-section-heading reveal-on-scroll">
           <div>
             <p className="home-kicker-1 normal-xsmall">{homeCopy.beyond.eyebrow}</p>
             <h2 className="title-3xl">{homeCopy.beyond.title}</h2>
@@ -126,7 +126,7 @@ export default function HomeBeyond() {
           </div>
           <div className="home-beyond-grid" ref={carouselRef}>
             {homeCopy.beyond.items.map((service, index) => (
-              <article key={service.title} className="home-beyond-card">
+              <article key={service.title} className="home-beyond-card reveal-on-scroll">
                 <div
                   className={`home-beyond-image home-beyond-image-${index + 1}`}
                   style={{ backgroundImage: `url(${serviceImages[service.icon as keyof typeof serviceImages].src})` }}

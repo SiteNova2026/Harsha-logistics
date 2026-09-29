@@ -7,7 +7,7 @@ export default function ServicesCTA() {
   return (
     <section className="services-cta" aria-labelledby="services-cta-title">
       <div className="services-cta-container c-width">
-        <div className="services-cta-image-wrap">
+        <div className="services-cta-image-wrap reveal-on-scroll" data-reveal="left">
           <Image
             className="services-cta-image"
             src={airFreight}
@@ -17,7 +17,7 @@ export default function ServicesCTA() {
           />
         </div>
 
-        <div className="services-cta-content">
+        <div className="services-cta-content reveal-on-scroll" data-reveal="right">
           <p className="services-cta-eyebrow normal-xsmall">{servicesCopy.ctaEyebrow}</p>
           <h2 id="services-cta-title" className="services-cta-title title-3xl">{servicesCopy.ctaTitle}</h2>
           <p className="services-cta-description normal-small">

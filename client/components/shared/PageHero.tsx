@@ -36,7 +36,7 @@ export default function PageHero({
 
       <div className="page-hero-wash" />
 
-      <div className="page-hero-content c-width">
+      <div className="page-hero-content c-width reveal-on-scroll">
         <nav className="page-hero-breadcrumbs">
           {breadcrumbs.map((crumb, i) => (
             <span key={crumb.label} className="page-hero-crumb normal-xsmall">

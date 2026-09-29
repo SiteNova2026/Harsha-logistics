@@ -6,7 +6,7 @@ export default function HomeServices() {
   return (
     <section className="home-section home-section-dark home-services-intro">
       <div className="home-shell c-width">
-        <div className="home-section-heading">
+        <div className="home-section-heading reveal-on-scroll">
           <div>
             <p className="home-kicker-1 normal-xsmall">{homeCopy.services.eyebrow}</p>
             <h2 className="title-3xl">{homeCopy.services.title}</h2>
@@ -18,7 +18,7 @@ export default function HomeServices() {
         <div className="services-grid-list">
           {servicesCopy.items.map((service) => (
             <Link
-              className="service-card-link normal-smallx"
+              className="service-card-link normal-smallx reveal-on-scroll"
               href={service.href}
               aria-label={service.label}
               key={service.id}

@@ -3,7 +3,7 @@ import { contactCopy } from "@/lib/constants/contact";
 
 export default function ContactInfo() {
   return (
-    <div className="contact-info">
+    <div className="contact-info reveal-on-scroll">
       <h3 className="contact-info-title title-xl">{contactCopy.sectionTitle}</h3>
       <div className="contact-info-list">
         <div>

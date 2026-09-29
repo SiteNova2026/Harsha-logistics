@@ -194,3 +194,37 @@
   transform-origin: 50% 50%;
   text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
 }
+
+.has-scroll-reveal .reveal-on-scroll {
+  opacity: 0;
+  translate: 0 1.5rem;
+  transition:
+    opacity 650ms cubic-bezier(.2, .7, .2, 1),
+    translate 650ms cubic-bezier(.2, .7, .2, 1);
+  will-change: opacity, transform;
+}
+
+.has-scroll-reveal .reveal-on-scroll[data-reveal="left"] {
+  translate: -1.5rem 0;
+}
+
+.has-scroll-reveal .reveal-on-scroll[data-reveal="right"] {
+  translate: 1.5rem 0;
+}
+
+.has-scroll-reveal .reveal-on-scroll.is-visible {
+  opacity: 1;
+  translate: 0 0;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .has-scroll-reveal .reveal-on-scroll,
+  .has-scroll-reveal .reveal-on-scroll[data-reveal="left"],
+  .has-scroll-reveal .reveal-on-scroll[data-reveal="right"] {
+    opacity: 1;
+    translate: none;
+    transition: none;
+    will-change: auto;
+  }
+}

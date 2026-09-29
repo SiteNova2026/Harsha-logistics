@@ -15,7 +15,7 @@ export default function HomeHero() {
       />
       <div className="home-hero-overlay" />
       <div className="home-shell home-hero-content">
-        <div className="c-width">
+        <div className="c-width reveal-on-scroll">
           <h1 className="title-5xl">
             {homeCopy.hero.titleLines[0]}
             <br />
@@ -29,7 +29,7 @@ export default function HomeHero() {
           </Link>  
         </div>
       </div>
-      <div className="home-hero-word title-10xl" aria-hidden="true">
+      <div className="home-hero-word title-10xl reveal-on-scroll" aria-hidden="true">
         {homeCopy.hero.brand}
       </div>
     </section>

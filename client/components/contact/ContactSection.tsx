@@ -9,7 +9,7 @@ export default function ContactSection() {
   return (
     <section className="contact-layout" aria-labelledby="contact-section-title">
       <div className="contact-layout-container c-width">
-        <div className="contact-details">
+        <div className="contact-details reveal-on-scroll" data-reveal="left">
           <p className="contact-eyebrow normal-xsmall">{contactCopy.sectionTitle}</p>
           <h2 id="contact-section-title" className="contact-title title-3xl">
             {company.name}
@@ -48,7 +48,7 @@ export default function ContactSection() {
           </div>
         </div>
 
-        <form className="contact-form">
+        <form className="contact-form reveal-on-scroll" data-reveal="right">
           <h2 className="contact-form-title title-xl">{contactCopy.formTitle}</h2>
           <p className="contact-form-intro normal-small">{contactCopy.formIntro}</p>
 

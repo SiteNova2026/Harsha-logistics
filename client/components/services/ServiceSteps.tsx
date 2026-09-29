@@ -12,12 +12,14 @@ type ServiceStepsProps = {
 export default function ServiceSteps({ kicker, title, steps }: ServiceStepsProps) {
   return (
     <section className="service-steps-block c-width">
-      <p className="service-section-kicker">{kicker}</p>
-      <h3>{title}</h3>
+      <div className="reveal-on-scroll">
+        <p className="service-section-kicker">{kicker}</p>
+        <h3>{title}</h3>
+      </div>
 
       <div className="steps-grid">
         {steps.map((step) => (
-          <div key={step.number} className="step-card">
+          <div key={step.number} className="step-card reveal-on-scroll">
             <span className="step-number">{step.number}</span>
             <p>{step.title}</p>
           </div>

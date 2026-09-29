@@ -6,7 +6,7 @@ export default function HomeAbout() {
   return (
     <section className="home-section home-about">
       <div className="home-shell c-width home-about-grid">
-        <div>
+        <div className="reveal-on-scroll" data-reveal="left">
           <p className="home-kicker-1 normal-xsmall">{homeCopy.about.eyebrow}</p>
           <h2 className="title-3xl">{homeCopy.about.title}</h2>
           <p className="home-about-copy normal-small">
@@ -24,7 +24,7 @@ export default function HomeAbout() {
             {homeCopy.about.linkLabel} <span aria-hidden="true">→</span>
           </Link>
         </div>
-        <div className="home-about-image">
+        <div className="home-about-image reveal-on-scroll" data-reveal="right">
           <Image
             src="/images/port-cranes.jpg"
             alt={homeCopy.about.imageAlt}

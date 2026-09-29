@@ -17,12 +17,14 @@ export default function ServiceFeatureGrid({
   return (
     <section className="service-feature-block">
       <div className="c-width">
-        <p className="service-section-kicker">{kicker}</p>
-        <h3>{heading}</h3>
+        <div className="reveal-on-scroll">
+          <p className="service-section-kicker">{kicker}</p>
+          <h3>{heading}</h3>
+        </div>
 
         <div className="feature-grid">
           {items.map((item) => (
-            <article key={item.title} className="feature-card">
+            <article key={item.title} className="feature-card reveal-on-scroll">
               <h4>{item.title}</h4>
               <p>{item.description}</p>
             </article>

@@ -92,10 +92,10 @@ export default function QuoteForm() {
   return (
     <section className="quote-layout" aria-labelledby="quote-form-title">
       <div className="quote-form-container c-width">
-        <form className="quote-form">
+        <form className="quote-form reveal-on-scroll">
           <h2 id="quote-form-title" className="sr-only">{quoteCopy.formTitle}</h2>
 
-          <fieldset className="quote-user-section">
+          <fieldset className="quote-user-section reveal-on-scroll">
             <legend className="quote-section-heading">
               <span className="quote-section-icon normal-small" aria-hidden="true"><QuoteIcon name="send" /></span>
               <span className="quote-section-title normal-xsmall">{quoteCopy.userData}</span>

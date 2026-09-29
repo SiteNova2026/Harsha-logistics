@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollReveal from "@/components/shared/ScrollReveal";
 import { siteCopy } from "@/lib/constants/siteCopy";
 import "./globals.css";
 import "./styles/global.scss";
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         {children}
         <Footer />
+        <ScrollReveal />
       </body>
     </html>
   );

@@ -33,7 +33,7 @@ export default function HomeNetwork() {
   return (
     <section className="home-section home-network ">
       <div className="home-shell c-width">
-        <div className="home-section-heading home-section-heading-light">
+        <div className="home-section-heading home-section-heading-light reveal-on-scroll">
           <div>
             <p className="home-kicker-1 normal-xsmall">
               {homeCopy.network.eyebrow}
@@ -46,7 +46,7 @@ export default function HomeNetwork() {
         </div>
         <div className="home-network-grid">
           {homeCopy.network.partners.map((partner) => (
-            <div className="home-network-card" key={partner.country}>
+            <div className="home-network-card reveal-on-scroll" key={partner.country}>
               <div className="home-network-card-heading">
                 <strong className="normal-small">{partner.code}</strong>
                 <div>

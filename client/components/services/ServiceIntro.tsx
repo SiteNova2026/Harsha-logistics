@@ -17,7 +17,7 @@ export default function ServiceIntro({
 }: ServiceIntroProps) {
   return (
     <section className="service-intro c-width">
-      <div className="service-intro-copy">
+      <div className="service-intro-copy reveal-on-scroll" data-reveal="left">
         <p className="service-section-kicker">{eyebrow}</p>
         <h2>{title}</h2>
         <p>{description}</p>
@@ -26,7 +26,7 @@ export default function ServiceIntro({
         </Link>
       </div>
 
-      <div className="service-visual">
+      <div className="service-visual reveal-on-scroll" data-reveal="right">
         <Image src={image} alt={title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" className="service-visual-image" />
       </div>
     </section>

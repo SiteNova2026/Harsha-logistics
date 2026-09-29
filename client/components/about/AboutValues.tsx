@@ -10,7 +10,7 @@ export default function AboutValues() {
 
         <div className="about-values-grid">
           {aboutCopy.values.items.map((value) => (
-            <article className="about-value" key={value.title}>
+            <article className="about-value reveal-on-scroll" key={value.title}>
               <h3 className="about-value-title normal-lg">{value.title}</h3>
               <p className="about-value-description normal-small">{value.description}</p>
             </article>

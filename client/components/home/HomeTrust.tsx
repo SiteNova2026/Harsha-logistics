@@ -4,7 +4,7 @@ export default function HomeTrust() {
   return (
     <section className="home-section home-trust c-width">
       <div className="home-shell">
-        <div className="home-section-heading home-section-heading-light">
+        <div className="home-section-heading home-section-heading-light reveal-on-scroll">
           <div>
             <p className="home-kicker normal-xsmall">{homeCopy.trust.eyebrow}</p>
             <h2 className="title-3xl">{homeCopy.trust.title}</h2>
@@ -15,7 +15,7 @@ export default function HomeTrust() {
         </div>
         <div className="home-trust-grid">
           {homeCopy.trust.items.map((item, index) => (
-            <div className="home-trust-card" key={index+1}>
+            <div className="home-trust-card reveal-on-scroll" key={index+1}>
               <span className="normal-lg">0{index + 1}</span>
               <h3 className="normal-lg">{item.title}</h3>
               <p className="normal-small">

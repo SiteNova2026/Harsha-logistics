@@ -76,7 +76,7 @@ export default function ServicesGrid() {
         <div className="services-grid-list">
           {servicesCopy.items.map((item) => (
             <Link
-              className="service-card-link normal-smallx"
+              className="service-card-link normal-smallx reveal-on-scroll"
               href={item.href}
               aria-label={item.label}
               key={item.id}

@@ -7,7 +7,7 @@ export default function HomeExplore() {
       <div className="home-explore-overlay" />
       <div className="home-shell c-width home-explore-grid">
         {homeCopy.explore.links.map((link) => (
-          <div className="home-explore-item" key={link.label}>
+          <div className="home-explore-item reveal-on-scroll" key={link.label}>
             <p className="home-kicker-1 normal-xsmall">{link.label}</p>
             <h2 className="title-xl">{link.title}</h2>
             <Link href={link.href} className="normal-xsmall">

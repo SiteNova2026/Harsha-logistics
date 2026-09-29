@@ -89,7 +89,7 @@ export default function HomeFeatured() {
   return (
     <section className="home-section home-section-dark home-featured">
       <div className="home-shell c-width relative">
-        <div className="home-featured-heading">
+        <div className="home-featured-heading reveal-on-scroll">
           <div>
             <p className="home-kicker-1 normal-xsmall">{homeCopy.featured.eyebrow}</p>
             <h2 className="title-3xl">{homeCopy.featured.title}</h2>
@@ -125,10 +125,10 @@ export default function HomeFeatured() {
                   inert={groupIndex !== 1}
                 >
                   <div className="home-feature-image">
-                    <Image
-                      src={serviceImages[service.href] || airImage}
+                    <img
+                      src={serviceImages[service.href].src || airImage.src}
                       alt={service.label}
-                      fill
+                      sizes="(max-width: 767px) calc(85vw - 24px), (max-width: 1882px) 57vw, 1076px"
                     />
                   </div>
                   <div className="home-feature-copy">

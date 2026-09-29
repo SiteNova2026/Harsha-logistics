@@ -16,10 +16,10 @@ type RelatedServicesProps = {
 export default function RelatedServices({ items }: RelatedServicesProps) {
   return (
     <section className="related-services-block c-width">
-      <h3>{servicesCopy.relatedServicesTitle}</h3>
+      <h3 className="reveal-on-scroll">{servicesCopy.relatedServicesTitle}</h3>
       <div className="related-grid">
         {items.map((item) => (
-          <Link key={item.href} href={item.href} className="related-card">
+          <Link key={item.href} href={item.href} className="related-card reveal-on-scroll">
             <Image
               src={item.image}
               alt={item.label}
