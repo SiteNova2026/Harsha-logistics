@@ -192,6 +192,9 @@ body {
 
 .site-quote-link {
   padding: 0.625rem 1.5rem;
+  &:hover{
+    color: var(--white) !important;
+  }
 }
 
 .mobile-menu {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { servicesCopy } from "@/lib/constants/services";
@@ -42,39 +42,43 @@ export default function HomeFeatured() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const itemCount = servicesCopy.items.length;
   const activeIndexRef = useRef(itemCount);
+  const [activeIndex, setActiveIndex] = useState(itemCount);
 
-  const scrollCarousel = useCallback((direction: number) => {
+  const scrollToIndex = useCallback((index: number) => {
     const carousel = carouselRef.current;
     if (!carousel) return;
 
+    const targetLeft = getCenteredItemOffset(carousel, index);
+    const currentLeft = carousel.scrollLeft;
+
+    if (Math.abs(targetLeft - currentLeft) < 1) return;
+
+    carousel.scrollTo({
+      left: targetLeft,
+      behavior: "smooth",
+    });
+  }, []);
+
+  const scrollCarousel = useCallback((direction: number) => {
     let targetIndex = activeIndexRef.current + direction;
-    let equivalentIndex = activeIndexRef.current;
 
     if (targetIndex < itemCount) {
-      equivalentIndex += itemCount;
       targetIndex += itemCount;
     } else if (targetIndex >= itemCount * 2) {
-      equivalentIndex -= itemCount;
       targetIndex -= itemCount;
     }
 
-    if (equivalentIndex !== activeIndexRef.current) {
-      carousel.scrollLeft = getCenteredItemOffset(carousel, equivalentIndex);
-    }
-
     activeIndexRef.current = targetIndex;
-    carousel.scrollTo({
-      left: getCenteredItemOffset(carousel, targetIndex),
-      behavior: "smooth",
-    });
-  }, [itemCount]);
+    setActiveIndex(targetIndex);
+    scrollToIndex(targetIndex);
+  }, [itemCount, scrollToIndex]);
 
   useEffect(() => {
     const carousel = carouselRef.current;
     if (!carousel) return;
 
     const positionActiveSlide = () => {
-      carousel.scrollLeft = getCenteredItemOffset(carousel, activeIndexRef.current);
+      scrollToIndex(activeIndexRef.current);
     };
 
     positionActiveSlide();
@@ -84,7 +88,9 @@ export default function HomeFeatured() {
       window.clearInterval(interval);
       window.removeEventListener("resize", positionActiveSlide);
     };
-  }, [itemCount, scrollCarousel]);
+  }, [itemCount, scrollCarousel, scrollToIndex]);
+
+  const activeServiceId = servicesCopy.items[activeIndex % itemCount]?.id;
 
   return (
     <section className="home-section home-section-dark home-featured">
@@ -105,21 +111,21 @@ export default function HomeFeatured() {
               onClick={() => scrollCarousel(-1)}
               aria-label={homeCopy.featured.previous}
             >
-              <span aria-hidden="true">←</span>
+              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-left h-5 w-5" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></span>
             </button>
             <button
               type="button"
               onClick={() => scrollCarousel(1)}
               aria-label={homeCopy.featured.next}
             >
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-5 w-5" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span>
             </button>
           </div>
           <div className="home-feature-grid" ref={carouselRef}>
             {[0, 1, 2].map((groupIndex) =>
               servicesCopy.items.map((service) => (
                 <article
-                  className="home-feature-card"
+                  className={`home-feature-card ${groupIndex === 1 && service.id === activeServiceId ? "is-active" : ""}`.trim()}
                   key={`${groupIndex}-${service.id}`}
                   aria-hidden={groupIndex !== 1}
                   inert={groupIndex !== 1}
@@ -128,7 +134,6 @@ export default function HomeFeatured() {
                     <img
                       src={serviceImages[service.href].src || airImage.src}
                       alt={service.label}
-                      sizes="(max-width: 767px) calc(85vw - 24px), (max-width: 1882px) 57vw, 1076px"
                     />
                   </div>
                   <div className="home-feature-copy">

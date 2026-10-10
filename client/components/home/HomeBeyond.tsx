@@ -114,14 +114,14 @@ export default function HomeBeyond() {
               onClick={() => scrollCarousel(-1)}
               aria-label={homeCopy.beyond.previous}
             >
-              <span aria-hidden="true">←</span>
+              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-left h-5 w-5" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></span>
             </button>
             <button
               type="button"
               onClick={() => scrollCarousel(1)}
               aria-label={homeCopy.beyond.next}
             >
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-right h-5 w-5" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span>
             </button>
           </div>
           <div className="home-beyond-grid" ref={carouselRef}>

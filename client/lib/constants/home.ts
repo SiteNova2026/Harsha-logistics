@@ -137,6 +137,33 @@ export const homeCopy = {
         locations: "Vladivostok · Moscow",
         route: "Vladivostok → Chennai · Moscow (Rail-Sea)",
       },
+      {
+        code: "SG",
+        country: "Singapore",
+        company: "SINGAPORE PORT LINKERS",
+        description:
+          "Gateway partner for transhipment coordination, breakbulk planning and fast turnarounds through Singapore's port network.",
+        locations: "Singapore",
+        route: "Singapore → Chennai · Singapore → Mumbai",
+      },
+      {
+        code: "AE",
+        country: "UAE",
+        company: "DUBAI TRADE NETWORK",
+        description:
+          "Regional support partner for UAE customs, inland haulage and vessel booking coordination across Jebel Ali and Sharjah.",
+        locations: "Dubai · Sharjah",
+        route: "Jebel Ali → Chennai · Sharjah → Kochi",
+      },
+      {
+        code: "VN",
+        country: "Vietnam",
+        company: "HO CHI MINH CARGO HUB",
+        description:
+          "LCL and FCL partner providing origin pickups, export documentation and feeder connections to Indian ports.",
+        locations: "Ho Chi Minh City · Hai Phong",
+        route: "Vietnam → Chennai · Hai Phong → Ennore",
+      },
     ],
   },
   about: {
