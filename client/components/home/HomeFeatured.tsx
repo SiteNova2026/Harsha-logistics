@@ -132,7 +132,7 @@ export default function HomeFeatured() {
                 >
                   <div className="home-feature-image">
                     <img
-                      src={serviceImages[service.href].src || airImage.src}
+                      src={serviceImages[service.href]?.src || airImage.src}
                       alt={service.label}
                     />
                   </div>
