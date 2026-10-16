@@ -3,7 +3,7 @@ import {
   ContactFormErrors,
   ContactFormValues,
   validateContactForm,
-} from "./validation";
+} from "./contactValidation";
 
 // Empty string = same Next.js project, so the call goes to /api/contact.
 // Only set NEXT_PUBLIC_API_URL if your backend is a separate server (e.g. http://localhost:5000).
