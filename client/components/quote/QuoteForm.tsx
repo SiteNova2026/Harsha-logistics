@@ -1,6 +1,15 @@
 "use client";
 
+import { ChangeEvent, FormEvent, useState } from "react";
 import { quoteCopy } from "@/lib/constants/quote";
+import { handleSubmitQuote } from "@/utils/quoteapi";
+import {
+  QuoteFormErrors,
+  QuoteFormValues,
+  createInitialQuoteValues,
+} from "@/utils/quoteValidation";
+
+type FieldChange = (e: ChangeEvent<HTMLInputElement>) => void;
 
 function Field({
   label,
@@ -8,17 +17,32 @@ function Field({
   placeholder,
   type = "text",
   required = false,
+  value,
+  onChange,
+  error,
 }: {
   label: string;
   name: string;
   placeholder: string;
   type?: string;
   required?: boolean;
+  value: string;
+  onChange: FieldChange;
+  error?: string;
 }) {
   return (
     <label className="quote-field normal-xxsmall">
       {label}
-      <input className="common-field normal-xsmall" name={name} type={type} placeholder={placeholder} required={required} />
+      <input
+        className="common-field normal-xsmall"
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        required={required}
+        value={value}
+        onChange={onChange}
+      />
+      {error && <span className="contact-error text-red-500 text-xs">{error}</span>}
     </label>
   );
 }
@@ -53,8 +77,24 @@ function QuoteIcon({ name }: { name: string }) {
   return <svg {...props}><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z" /></svg>;
 }
 
-function FreightSection({ section }: { section: { key: string; title: string; icon: string } }) {
+function FreightSection({
+  section,
+  values,
+  onChange,
+}: {
+  section: { key: string; title: string; icon: string };
+  values: QuoteFormValues;
+  onChange: FieldChange;
+}) {
   const { title, icon, key: sectionKey } = section;
+  const f = quoteCopy.fields;
+
+  // small helper so every field gets its value + onChange automatically
+  const bind = (suffix: string) => ({
+    name: `${sectionKey}${suffix}`,
+    value: values[`${sectionKey}${suffix}`] ?? "",
+    onChange,
+  });
 
   return (
     <fieldset className="quote-freight-section">
@@ -62,24 +102,27 @@ function FreightSection({ section }: { section: { key: string; title: string; ic
         <span className="quote-section-icon normal-small" aria-hidden="true"><QuoteIcon name={icon} /></span>
         <span className="quote-section-title normal-xsmall">{title}</span>
       </legend>
+
       <div className="quote-fields quote-fields-route">
-        <Field label={quoteCopy.fields.departure.label} name={`${sectionKey}Departure`} placeholder={quoteCopy.fields.departure.placeholder} />
-        <Field label={quoteCopy.fields.delivery.label} name={`${sectionKey}Delivery`} placeholder={quoteCopy.fields.delivery.placeholder} />
-        <Field label={quoteCopy.fields.incoterm.label} name={`${sectionKey}Incoterm`} placeholder={quoteCopy.fields.incoterm.placeholder} />
+        <Field label={f.departure.label} placeholder={f.departure.placeholder} {...bind("Departure")} />
+        <Field label={f.delivery.label} placeholder={f.delivery.placeholder} {...bind("Delivery")} />
+        <Field label={f.incoterm.label} placeholder={f.incoterm.placeholder} {...bind("Incoterm")} />
       </div>
+
       {sectionKey !== "courier" && (
         <div className="quote-fields quote-fields-dimensions">
-          <Field label={quoteCopy.fields.weight.label} name={`${sectionKey}Weight`} placeholder={quoteCopy.fields.weight.placeholder} />
-          <Field label={quoteCopy.fields.width.label} name={`${sectionKey}Width`} placeholder={quoteCopy.fields.width.placeholder} />
-          <Field label={quoteCopy.fields.height.label} name={`${sectionKey}Height`} placeholder={quoteCopy.fields.height.placeholder} />
-          <Field label={quoteCopy.fields.length.label} name={`${sectionKey}Length`} placeholder={quoteCopy.fields.length.placeholder} />
+          <Field label={f.weight.label} placeholder={f.weight.placeholder} {...bind("Weight")} />
+          <Field label={f.width.label} placeholder={f.width.placeholder} {...bind("Width")} />
+          <Field label={f.height.label} placeholder={f.height.placeholder} {...bind("Height")} />
+          <Field label={f.length.label} placeholder={f.length.placeholder} {...bind("Length")} />
         </div>
       )}
+
       {sectionKey === "courier" && (
         <div className="quote-fields quote-fields-route">
-          <Field label={quoteCopy.fields.package.label} name="courierPackage" placeholder={quoteCopy.fields.package.placeholder} />
-          <Field label={quoteCopy.fields.weight.label} name="courierWeight" placeholder={quoteCopy.fields.weight.placeholder} />
-          <Field label={quoteCopy.fields.speed.label} name="courierSpeed" placeholder={quoteCopy.fields.speed.placeholder} />
+          <Field label={f.package.label} placeholder={f.package.placeholder} {...bind("Package")} />
+          <Field label={f.weight.label} placeholder={f.weight.placeholder} {...bind("Weight")} />
+          <Field label={f.speed.label} placeholder={f.speed.placeholder} {...bind("Speed")} />
         </div>
       )}
     </fieldset>
@@ -87,12 +130,38 @@ function FreightSection({ section }: { section: { key: string; title: string; ic
 }
 
 export default function QuoteForm() {
+  const sectionKeys = quoteCopy.sections.map((s) => s.key);
 
+  const [values, setValues] = useState<QuoteFormValues>(() =>
+    createInitialQuoteValues(sectionKeys)
+  );
+  const [errors, setErrors] = useState<QuoteFormErrors>({});
+  const [loading, setLoading] = useState(false);
+
+  const handleChange: FieldChange = (e) => {
+   const { name } = e.target;
+    let { value } = e.target;
+
+    if (name === "phone") {
+    value = value.replace(/\D/g, ""); // keep digits only
+  }
+    setValues((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "", freight: "" }));
+  };
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    await handleSubmitQuote(values, sectionKeys, setErrors, () =>
+      setValues(createInitialQuoteValues(sectionKeys))
+    );
+    setLoading(false);
+  };
 
   return (
     <section className="quote-layout" aria-labelledby="quote-form-title">
       <div className="quote-form-container c-width">
-        <form className="quote-form reveal-on-scroll">
+        <form className="quote-form reveal-on-scroll" onSubmit={onSubmit} noValidate>
           <h2 id="quote-form-title" className="sr-only">{quoteCopy.formTitle}</h2>
 
           <fieldset className="quote-user-section reveal-on-scroll">
@@ -101,21 +170,61 @@ export default function QuoteForm() {
               <span className="quote-section-title normal-xsmall">{quoteCopy.userData}</span>
             </legend>
             <div className="quote-fields quote-fields-company">
-              <Field label={quoteCopy.fields.company.label} name="company" placeholder={quoteCopy.fields.company.placeholder} required />
+              <Field
+                label={quoteCopy.fields.company.label}
+                name="company"
+                placeholder={quoteCopy.fields.company.placeholder}
+                required
+                value={values.company}
+                onChange={handleChange}
+                error={errors.company}
+              />
             </div>
             <div className="quote-fields quote-fields-user">
-              <Field label={quoteCopy.fields.name.label} name="name" placeholder={quoteCopy.fields.name.placeholder} required />
-              <Field label={quoteCopy.fields.email.label} name="email" placeholder={quoteCopy.fields.email.placeholder} type="email" required />
-              <Field label={quoteCopy.fields.phone.label} name="phone" placeholder={quoteCopy.fields.phone.placeholder} type="tel" />
+              <Field
+                label={quoteCopy.fields.name.label}
+                name="name"
+                placeholder={quoteCopy.fields.name.placeholder}
+                required
+                value={values.name}
+                onChange={handleChange}
+                error={errors.name}
+              />
+              <Field
+                label={quoteCopy.fields.email.label}
+                name="email"
+                type="email"
+                placeholder={quoteCopy.fields.email.placeholder}
+                required
+                value={values.email}
+                onChange={handleChange}
+                error={errors.email}
+              />
+              <Field
+                label={quoteCopy.fields.phone.label}
+                name="phone"
+                type="tel"
+                placeholder={quoteCopy.fields.phone.placeholder}
+                value={values.phone}
+                onChange={handleChange}
+                error={errors.phone}
+              />
             </div>
           </fieldset>
 
           {quoteCopy.sections.map((section) => (
-            <FreightSection key={section.key} section={section} />
+            <FreightSection
+              key={section.key}
+              section={section}
+              values={values}
+              onChange={handleChange}
+            />
           ))}
 
-          <button className="quote-submit normal-small font-bold" type="button">
-            {quoteCopy.submit }
+          {errors.freight && <p className="contact-error text-red-500">{errors.freight}</p>}
+
+          <button className="quote-submit normal-small font-bold" type="submit" disabled={loading}>
+            {loading ? "Sending..." : quoteCopy.submit}
           </button>
         </form>
       </div>
