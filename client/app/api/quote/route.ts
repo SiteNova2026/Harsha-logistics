@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/lib/db/mongodb";
 import Quote from "@/lib/models/Quote";
 import transporter from "@/lib/mail/mail";
+import { renderEmail, EmailSection } from "@/components/mail/Emailtemplate";
 
 export const runtime = "nodejs";
 
@@ -34,14 +35,6 @@ const FIELD_LABELS: Record<string, string> = {
   speed: "Delivery Speed",
 };
 
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
 // Never trust the client: keep only short, non-empty string values
 function cleanFreights(input: unknown): Freights {
   const result: Freights = {};
@@ -60,25 +53,16 @@ function cleanFreights(input: unknown): Freights {
   return result;
 }
 
-function freightsToHtml(freights: Freights): string {
-  return Object.entries(freights)
-    .map(([section, fields]) => {
-      const rows = Object.entries(fields)
-        .map(
-          ([field, value]) =>
-            `<tr><td style="padding:4px 12px 4px 0"><strong>${escapeHtml(
-              FIELD_LABELS[field] ?? field
-            )}:</strong></td><td>${escapeHtml(value)}</td></tr>`
-        )
-        .join("");
-      return `<h4 style="margin:16px 0 4px">${escapeHtml(
-        SECTION_TITLES[section] ?? section
-      )}</h4><table>${rows}</table>`;
-    })
-    .join("");
+function freightsToSections(freights: Freights): EmailSection[] {
+  return Object.entries(freights).map(([section, fields]) => ({
+    title: SECTION_TITLES[section] ?? section,
+    rows: Object.entries(fields).map(([field, value]) => ({
+      label: FIELD_LABELS[field] ?? field,
+      value,
+    })),
+  }));
 }
 
-// Open http://localhost:3000/api/quote in the browser to check the route
 export async function GET() {
   return NextResponse.json({ success: true, message: "Quote API is working" });
 }
@@ -123,20 +107,26 @@ export async function POST(req: NextRequest) {
       freights,
     });
 
+    const html = renderEmail({
+      eyebrow: "Quote Request",
+      title: `New Quote Request`,
+      rows: [
+        { label: "Company", value: company },
+        { label: "Name", value: name },
+        { label: "Email", value: email, href: `mailto:${email}` },
+        ...(phone ? [{ label: "Phone", value: phone, href: `tel:${phone.replace(/[^\d+]/g, "")}` }] : []),
+      ],
+      sections: freightsToSections(freights),
+      replyTo: { email, label: `Reply to ${name}` },
+      submittedAt: quote.get("createdAt"),
+    });
+
     await transporter.sendMail({
       from: process.env.Admin_Mail,
       to: process.env.Admin_Mail,
       replyTo: email,
       subject: `New Quote Request - ${company}`,
-      html: `
-        <h3>New Quote Request</h3>
-        <p><strong>Company:</strong> ${escapeHtml(company)}</p>
-        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        <p><strong>Phone:</strong> ${escapeHtml(phone || "N/A")}</p>
-        ${freightsToHtml(freights)}
-        <p style="margin-top:16px"><strong>Submitted At:</strong> ${String(quote.get("createdAt"))}</p>
-      `,
+      html,
     });
 
     return NextResponse.json(

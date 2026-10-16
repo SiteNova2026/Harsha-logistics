@@ -221,7 +221,7 @@ export default function QuoteForm() {
             />
           ))}
 
-          {errors.freight && <p className="contact-error text-red-500">{errors.freight}</p>}
+          {errors.freight && <p className="contact-error text-red-500 uppercase text-sm">{errors.freight}</p>}
 
           <button className="quote-submit normal-small font-bold" type="submit" disabled={loading}>
             {loading ? "Sending..." : quoteCopy.submit}
