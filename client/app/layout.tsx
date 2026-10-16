@@ -6,6 +6,7 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import { siteCopy } from "@/lib/constants/siteCopy";
 import "./globals.css";
 import "./styles/global.scss";
+import{ ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${geistSans.variable} ${geistMono.variable} site-body`}>
         <Header />
         {children}
+       <ToastContainer
+          position="top-right"
+          autoClose={4000}
+          theme="colored"
+          newestOnTop
+          closeOnClick
+          pauseOnHover
+        />
         <Footer />
         <ScrollReveal />
       </body>
