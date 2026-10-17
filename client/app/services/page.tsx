@@ -8,7 +8,7 @@ import "../styles/components/services.scss";
 import portCranes from "../../public/images/container-yard.jpg";
 
 export const metadata = createPageMetadata(
-  "Freight Forwarding & Logistics Services in India",
+  "Harshavardhani Shipping & Forwarding India Pvt Ltd",
   "Explore ocean and air freight, road and rail transport, customs clearance, warehousing and international courier services from Harsha Logistics.",
   "/services",
 );
