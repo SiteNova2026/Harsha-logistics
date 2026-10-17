@@ -6,8 +6,15 @@ import RelatedServices from "@/components/services/RelatedServices";
 import { AirFreightService, servicesCopy } from "@/lib/constants/services";
 import { getRelatedServices } from "@/lib/constants/relatedServices";
 import { siteCopy } from "@/lib/constants/siteCopy";
+import { createPageMetadata } from "@/lib/constants/seo";
 import airImage from "../../../public/images/air-freight.jpg";
 import "../../styles/components/services.scss";
+
+export const metadata = createPageMetadata(
+  "International Air Freight Services from India",
+  "Ship urgent and time-sensitive cargo with air freight from Chennai and major Indian airports. Harsha Logistics handles scheduled, priority and charter shipments.",
+  "/services/air-freight",
+);
 
 const otherServices = getRelatedServices("/services/air-freight");
 
