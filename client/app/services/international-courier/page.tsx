@@ -6,8 +6,15 @@ import RelatedServices from "@/components/services/RelatedServices";
 import { InternationalCourierService, servicesCopy } from "@/lib/constants/services";
 import { getRelatedServices } from "@/lib/constants/relatedServices";
 import { siteCopy } from "@/lib/constants/siteCopy";
+import { createPageMetadata } from "@/lib/constants/seo";
 import courierImage from "../../../public/images/svc-courier.jpg";
 import "../../styles/components/services.scss";
+
+export const metadata = createPageMetadata(
+  "International Courier Services from India",
+  "Send documents and small parcels from India to more than 200 destinations with Harsha Logistics international door-to-door courier services.",
+  "/services/international-courier",
+);
 
 const otherServices = getRelatedServices("/services/international-courier");
 

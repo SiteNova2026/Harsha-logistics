@@ -6,8 +6,15 @@ import RelatedServices from "@/components/services/RelatedServices";
 import { CustomsClearanceService, servicesCopy } from "@/lib/constants/services";
 import { getRelatedServices } from "@/lib/constants/relatedServices";
 import { siteCopy } from "@/lib/constants/siteCopy";
+import { createPageMetadata } from "@/lib/constants/seo";
 import customsImage from "../../../public/images/svc-customs.jpg";
 import "../../styles/components/services.scss";
+
+export const metadata = createPageMetadata(
+  "Customs Clearance & CHA Services in Chennai",
+  "Get licensed customs broker support for import and export clearance at Chennai and major Indian ports, including documentation and HS classification.",
+  "/services/customs-clearance",
+);
 
 const otherServices = getRelatedServices("/services/customs-clearance");
 

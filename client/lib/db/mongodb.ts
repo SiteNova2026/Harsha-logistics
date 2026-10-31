@@ -4,6 +4,7 @@ console.log("MONGODB_URI", MONGODB_URI);
 
 if(!MONGODB_URI){
     throw new Error( "MONGODB_URI is missing. Check .env.local in your project root.");
+    console.error("MONGODB_URI is missing. Check .env.local in your project root.");
 }
 
 interface MongooseInstance {

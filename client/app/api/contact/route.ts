@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/lib/db/mongodb";
 import Contact from "@/lib/models/Contact";
 import transporter from "@/lib/mail/mail";
+import { renderEmail } from "@/components/mail/Emailtemplate";
+
 
 export const runtime = "nodejs"; // nodemailer + mongoose need the Node runtime, not Edge
 
@@ -14,16 +16,7 @@ interface ContactBody {
   message?: string;
 }
 
-// Prevents users from injecting HTML into the notification email
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
 
-// Simple check: open http://localhost:3000/api/contact in the browser
 export async function GET() {
   return NextResponse.json({ success: true, message: "Contact API is working" });
 }
@@ -62,22 +55,26 @@ export async function POST(req: NextRequest) {
       phoneNumber,
       message,
     });
-
+    const html = renderEmail({
+      eyebrow: "Contact Form",
+      title: "New Contact Submission",
+      rows: [
+        { label: "Full Name", value: fullName },
+        { label: "Email", value: email, href: `mailto:${email}` },
+        { label: "Phone", value: phoneNumber, href: `tel:${phoneNumber}` },
+        { label: "Company", value: companyName || "N/A" },
+      ],
+      message,
+      replyTo: { email, label: `Reply to ${fullName}` },
+      submittedAt: contact.get("createdAt"),
+    });
     // ---- send mail ----
     await transporter.sendMail({
       from: process.env.Admin_Mail,
       to: process.env.Admin_Mail,
       replyTo: email, // so you can hit "Reply" and answer the customer
-      subject: "New Contact Form Submission",
-      html: `
-        <h3>New Contact Submission</h3>
-        <p><strong>Full Name:</strong> ${escapeHtml(fullName)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        <p><strong>Company Name:</strong> ${escapeHtml(companyName || "N/A")}</p>
-        <p><strong>Phone Number:</strong> ${escapeHtml(phoneNumber)}</p>
-        <p><strong>Message:</strong> ${escapeHtml(message)}</p>
-        <p><strong>Submitted At:</strong> ${String(contact.get("createdAt"))}</p>
-      `,
+      subject: `New Contact Form Submission - ${fullName}`,
+      html,
     });
 
     return NextResponse.json(

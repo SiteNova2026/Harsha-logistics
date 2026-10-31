@@ -1,7 +1,8 @@
 export const siteCopy = {
   metadata: {
-    title: "Harsha Logistics",
-    description: "Reliable freight and logistics services for growing businesses.",
+    title: "Harshavardhani Shipping & Forwarding India Pvt Ltd",
+    description:
+      "Harshavardhani Shipping & Forwarding provides ocean and air freight, customs clearance, warehousing and logistics services from Chennai, India.",
   },
   brand: {
     logistics: "Shipping & Forwarding",

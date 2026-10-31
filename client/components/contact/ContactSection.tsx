@@ -7,7 +7,7 @@ import {
   ContactFormValues,
   ContactFormErrors,
   initialContactValues,
-} from "@/utils/validation";
+} from "@/utils/contactValidation";
 
 export default function ContactSection() {
   const [values, setValues] = useState<ContactFormValues>(initialContactValues);

@@ -3,8 +3,15 @@ import ServicesGrid from "@/components/services/ServicesGrid";
 import ServicesCTA from "@/components/services/ServicesCTA";
 import { servicesCopy } from "@/lib/constants/services";
 import { siteCopy } from "@/lib/constants/siteCopy";
+import { createPageMetadata } from "@/lib/constants/seo";
 import "../styles/components/services.scss";
 import portCranes from "../../public/images/container-yard.jpg";
+
+export const metadata = createPageMetadata(
+  "Harshavardhani Shipping & Forwarding India Pvt Ltd",
+  "Explore ocean and air freight, road and rail transport, customs clearance, warehousing and international courier services from Harsha Logistics.",
+  "/services",
+);
 
 export default function ServicesPage() {
   return (

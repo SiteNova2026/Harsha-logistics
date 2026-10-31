@@ -6,8 +6,15 @@ import RelatedServices from "@/components/services/RelatedServices";
 import { OceanFreight, servicesCopy } from "@/lib/constants/services";
 import { getRelatedServices } from "@/lib/constants/relatedServices";
 import { siteCopy } from "@/lib/constants/siteCopy";
+import { createPageMetadata } from "@/lib/constants/seo";
 import shipImage from "../../../public/images/svc-ocean.jpg";
 import "../../styles/components/services.scss";
+
+export const metadata = createPageMetadata(
+  "Ocean Freight & Sea Cargo from Chennai, India",
+  "Book FCL, LCL and break-bulk ocean freight from Chennai and major Indian ports, with carrier options, customs coordination and door-to-door shipping.",
+  "/services/ocean-freight",
+);
 
 const otherServices = getRelatedServices("/services/ocean-freight");
 

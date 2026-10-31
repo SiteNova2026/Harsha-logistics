@@ -6,8 +6,15 @@ import RelatedServices from "@/components/services/RelatedServices";
 import { WarehouseService, servicesCopy } from "@/lib/constants/services";
 import { getRelatedServices } from "@/lib/constants/relatedServices";
 import { siteCopy } from "@/lib/constants/siteCopy";
+import { createPageMetadata } from "@/lib/constants/seo";
 import warehouseImage from "../../../public/images/svc-warehouse.jpg";
 import "../../styles/components/services.scss";
+
+export const metadata = createPageMetadata(
+  "Warehousing & Cargo Handling in Chennai, India",
+  "Coordinate cargo storage, palletisation, packing and distribution with Harsha Logistics warehousing and freight handling services in India.",
+  "/services/warehouse",
+);
 
 const otherServices = getRelatedServices("/services/warehouse");
 
