@@ -29,7 +29,7 @@ export default function Header() {
       <div className="site-header-container c-width">
         <Link href="/" className="site-brand">
           <div className="site-brand-copy block">
-            <img src={desktopLogo.src} alt={company.name} className="hidden md:flex" width={120} height={40} />
+            <img src={desktopLogo.src} alt={company.name} className="hidden md:flex" width={165} height={50} />
             <img src={mobileLogo.src} alt={company.name} className="md:hidden" width={50} height={40} />
           </div>
         </Link>
