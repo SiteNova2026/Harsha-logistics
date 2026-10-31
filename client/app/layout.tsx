@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     default: siteCopy.metadata.title,
     template: "%s | Harsha Logistics",
   },
+    icons: {
+    icon: "/images/logo_hq.png",
+  
+  },
   description: siteCopy.metadata.description,
   openGraph: {
     type: "website",
