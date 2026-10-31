@@ -97,39 +97,79 @@ export default function HomeBeyond() {
       <div className="home-shell c-width">
         <div className="home-section-heading reveal-on-scroll">
           <div>
-            <p className="home-kicker-1 normal-xsmall">{homeCopy.beyond.eyebrow}</p>
+            <p className="home-kicker-1 normal-xsmall">
+              {homeCopy.beyond.eyebrow}
+            </p>
             <h2 className="title-3xl">{homeCopy.beyond.title}</h2>
           </div>
-          <p className="normal-small">
-            {homeCopy.beyond.description}
-          </p>
-        </div>
-        <div className="home-beyond-carousel">
-          <div
-            className="home-beyond-controls"
-            aria-label={homeCopy.beyond.controlsLabel}
-          >
-            <button
-              type="button"
-              onClick={() => scrollCarousel(-1)}
-              aria-label={homeCopy.beyond.previous}
+          <div className='flex flex-col md:flex-row gap-4 md:justify-between'>
+            <p className="normal-small">{homeCopy.beyond.description}</p>
+            <div
+              className="home-beyond-controls"
+              aria-label={homeCopy.beyond.controlsLabel}
             >
-              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-left h-5 w-5" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></span>
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollCarousel(1)}
-              aria-label={homeCopy.beyond.next}
-            >
-              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-5 w-5" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span>
-            </button>
+              <button
+                type="button"
+                onClick={() => scrollCarousel(-1)}
+                aria-label={homeCopy.beyond.previous}
+              >
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-chevron-left h-5 w-5"
+                    aria-hidden="true"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCarousel(1)}
+                aria-label={homeCopy.beyond.next}
+              >
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-chevron-right h-5 w-5"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
           </div>
+        </div>
+
+        <div className="home-beyond-carousel">
           <div className="home-beyond-grid" ref={carouselRef}>
             {homeCopy.beyond.items.map((service, index) => (
-              <article key={service.title} className="home-beyond-card reveal-on-scroll">
+              <article
+                key={service.title}
+                className="home-beyond-card"
+              >
                 <div
                   className={`home-beyond-image home-beyond-image-${index + 1}`}
-                  style={{ backgroundImage: `url(${serviceImages[service.icon as keyof typeof serviceImages].src})` }}
+                  style={{
+                    backgroundImage: `url(${serviceImages[service.icon as keyof typeof serviceImages].src})`,
+                  }}
                 >
                   <span className="home-beyond-icon" aria-hidden="true">
                     <ServiceIcon name={service.icon} />

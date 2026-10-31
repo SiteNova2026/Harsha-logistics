@@ -52,30 +52,62 @@ export default function HomeNetwork() {
             </p>
             <h2 className="title-3xl">{homeCopy.network.title}</h2>
           </div>
-          <p className="normal-small">
-            {homeCopy.network.description}
-          </p>
+          <div className='flex flex-col md:flex-row gap-4 md:justify-between'>
+            <p className="normal-small">{homeCopy.network.description}</p>
+            <div
+              className="home-network-controls"
+              aria-label="Network partners carousel controls"
+            >
+              <button
+                type="button"
+                onClick={() => scrollCarousel(-1)}
+                aria-label="Previous network partner"
+              >
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-chevron-left h-5 w-5"
+                    aria-hidden="true"
+                  >
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCarousel(1)}
+                aria-label="Next network partner"
+              >
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-chevron-right h-5 w-5"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
         <div className="home-network-carousel">
-          <div
-            className="home-network-controls"
-            aria-label="Network partners carousel controls"
-          >
-            <button
-              type="button"
-              onClick={() => scrollCarousel(-1)}
-              aria-label="Previous network partner"
-            >
-              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-left h-5 w-5" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></span>
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollCarousel(1)}
-              aria-label="Next network partner"
-            >
-              <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-5 w-5" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span>
-            </button>
-          </div>
           <div className="home-network-grid" ref={carouselRef}>
             {homeCopy.network.partners.map((partner) => (
               <div className="home-network-card" key={partner.country}>

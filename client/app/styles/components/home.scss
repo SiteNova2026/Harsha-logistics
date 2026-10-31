@@ -423,33 +423,38 @@
 
         .home-beyond-controls {
             display: flex;
-            gap: .75rem;
-            position: absolute;
-            top: -4.5rem;
-            right: 0;
-            z-index: 2;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            gap: clamp(.5rem, 2vw, .75rem);
 
             button {
                 display: grid;
-                width: 3.25rem;
-                height: 3.25rem;
+                flex: 0 0 clamp(2.75rem, 8vw, 3.25rem);
+                width: clamp(2.75rem, 8vw, 3.25rem);
+                height: clamp(2.75rem, 8vw, 3.25rem);
                 place-items: center;
                 border: 1.5px solid rgba(255, 255, 255, 0.8);
                 border-radius: 50%;
                 background: rgba(12, 24, 45, 0.18);
                 color: var(--foreground);
                 cursor: pointer;
-                font-size: 1.5rem;
-                transition: border-color .2s ease, color .2s ease;
+                touch-action: manipulation;
+                transition: border-color .2s ease, background-color .2s ease, color .2s ease, transform .2s ease;
 
                 &:hover {
                     border-color: var(--accent-cyan);
+                    background: color-mix(in oklab, var(--accent-cyan) 12%, transparent);
                     color: var(--accent-cyan);
+                    transform: translateY(-2px);
                 }
 
                 &:focus-visible {
                     outline: 2px solid var(--accent-cyan);
                     outline-offset: 3px;
+                }
+
+                &:active {
+                    transform: translateY(0);
                 }
 
                 span {
@@ -568,7 +573,7 @@
 
         @include media-max-md {
             .home-beyond-controls {
-                top: -4rem;
+                justify-content: flex-start;
             }
 
             .home-beyond-card {
@@ -586,33 +591,37 @@
 
         .home-network-controls {
             display: flex;
-            gap: .75rem;
-            position: absolute;
-            top: -4.5rem;
-            right: 0;
-            z-index: 2;
+            flex-wrap: nowrap;
+            gap: clamp(.5rem, 2vw, .75rem);
 
             button {
                 display: grid;
-                width: 3.25rem;
-                height: 3.25rem;
+                flex: 0 0 clamp(2.75rem, 8vw, 3.25rem);
+                width: clamp(2.75rem, 8vw, 3.25rem);
+                height: clamp(2.75rem, 8vw, 3.25rem);
                 place-items: center;
                 border: 1.5px solid rgba(255, 255, 255, 0.8);
                 border-radius: 50%;
                 background: rgba(12, 24, 45, 0.18);
                 color: var(--foreground);
                 cursor: pointer;
-                font-size: 1.5rem;
-                transition: border-color .2s ease, color .2s ease;
+                touch-action: manipulation;
+                transition: border-color .2s ease, background-color .2s ease, color .2s ease, transform .2s ease;
 
                 &:hover {
                     border-color: var(--accent-cyan);
+                    background: color-mix(in oklab, var(--accent-cyan) 12%, transparent);
                     color: var(--accent-cyan);
+                    transform: translateY(-2px);
                 }
 
                 &:focus-visible {
                     outline: 2px solid var(--accent-cyan);
                     outline-offset: 3px;
+                }
+
+                &:active {
+                    transform: translateY(0);
                 }
 
                 span {
@@ -713,6 +722,12 @@
 
             .home-network-routes svg {
                 color: var(--accent-cyan);
+            }
+        }
+
+        @include media-max-md {
+            .home-network-controls {
+                top: -4rem;
             }
         }
     }
