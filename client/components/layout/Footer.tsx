@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { company } from "@/lib/constants/company";
 import Image from "next/image";
-import logo from "../../public/images/logo.png";
+import logo from "../../public/images/harshavardhani_logo_colour.png";
 import { siteCopy } from "@/lib/constants/siteCopy";
 export default function Footer() {
   return (
@@ -11,11 +11,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <div className="site-footer-logo">
-                <Image
+                <img
                   src={logo.src}
                   alt={company.name}
-                  width={50}
-                  height={40}
                   style={{ width: "100%", height: "auto" }}
                 />
               </div>

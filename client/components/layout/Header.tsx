@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import { company } from "@/lib/constants/company";
 import Navbar from "@/components/layout/Navbar";
 import MobileMenu from "@/components/layout/MobileMenu";
-import { siteCopy } from "@/lib/constants/siteCopy";
+import desktopLogo from "../../public/images/harshavardhani_logo_white.png";
+import mobileLogo from "../../public/images/logo_hq.png";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,12 +29,8 @@ export default function Header() {
       <div className="site-header-container c-width">
         <Link href="/" className="site-brand">
           <div className="site-brand-copy block">
-            <div className="site-brand-name normal-xsmall">
-              {company.shortName}
-            </div>
-            <div className="site-brand-tagline normal-xsmall">
-              {siteCopy.brand.logistics}
-            </div>
+            <img src={desktopLogo.src} alt={company.name} className="hidden md:flex" width={120} height={40} />
+            <img src={mobileLogo.src} alt={company.name} className="md:hidden" width={50} height={40} />
           </div>
         </Link>
 
