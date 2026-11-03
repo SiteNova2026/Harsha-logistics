@@ -17,7 +17,7 @@ export const servicesCopy = {
       icon: "document",
       href: "/services/customs-clearance",
       page: {
-        eyebrow: "service 04",
+        eyebrow: "service 01",
         title: "Customs Clearance",
         description: "Licensed CHA and documentation.",
       },
@@ -30,7 +30,7 @@ export const servicesCopy = {
       icon: "ship",
       href: "/services/ocean-freight",
       page: {
-        eyebrow: "service 01",
+        eyebrow: "service 02",
         title: "Ocean Freight",
         description: "FCL & LCL global ocean shipping.",
       },
@@ -43,7 +43,7 @@ export const servicesCopy = {
       icon: "plane",
       href: "/services/air-freight",
       page: {
-        eyebrow: "service 02",
+        eyebrow: "service 03",
         title: "Air Freight",
         description: "Priority air cargo, door to door.",
       },
@@ -56,7 +56,7 @@ export const servicesCopy = {
       icon: "truck",
       href: "/services/road-rail",
       page: {
-        eyebrow: "service 03",
+        eyebrow: "service 04",
         title: "Road Transport",
         description: "Domestic & cross-border transport.",
       },
@@ -117,14 +117,14 @@ export const servicesCopy = {
     },
     {
       id: "09",
-      label: "Chemical Cargo Handling",
+      label: "Hazardous Cargo Handling",
       description:
-        "Specialized transportation and handling of chemical cargo with proper packaging, documentation and regulatory compliance.",
+        "Specialized transportation and handling of hazardous cargo with proper packaging, documentation and regulatory compliance.",
       icon: "chemical",
       href: "/services/chemical-cargo-handling",
       page: {
         eyebrow: "service 09",
-        title: "Chemical Cargo Handling",
+        title: "Hazardous Cargo Handling",
         description:
           "Safe, compliant and reliable logistics solutions for chemical and hazardous cargo.",
       },
@@ -543,7 +543,7 @@ export const ReeferContainerCargoService = [
 
 export const ChemicalCargoHandlingService = [
   {
-    title: "Chemical Cargo Handling",
+    title: "Hazardous Cargo Handling",
     description: "Hazardous and chemical cargo requires disciplined handling, documentation and regulatory compliance. We manage the safe movement of dangerous goods from collection to discharge with specialist support.",
     subtitle: "Key features",
     subdescription: "What you get",

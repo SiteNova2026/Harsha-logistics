@@ -1,28 +1,40 @@
+
 import PageHeader from "@/components/shared/PageHero";
 import ServiceIntro from "@/components/services/ServiceIntro";
 import ServiceFeatureGrid from "@/components/services/ServiceFeatureGrid";
 import ServiceSteps from "@/components/services/ServiceSteps";
 import RelatedServices from "@/components/services/RelatedServices";
-import { OceanFreight, servicesCopy } from "@/lib/constants/services";
+
+import {
+  servicesCopy,
+  ChemicalCargoHandlingService,
+} from "@/lib/constants/services";
+
 import { getRelatedServices } from "@/lib/constants/relatedServices";
 import { siteCopy } from "@/lib/constants/siteCopy";
 import { createPageMetadata } from "@/lib/constants/seo";
-import shipImage from "../../../public/images/svc-ocean.jpg";
+
+import shipImage from "../../../public/images/hazadorous_cargo_handling.png";
 import "../../styles/components/services.scss";
 
 export const metadata = createPageMetadata(
-  "Ocean Freight & Sea Cargo from Chennai, India",
-  "Book FCL, LCL and break-bulk ocean freight from Chennai and major Indian ports, with carrier options, customs coordination and door-to-door shipping.",
-  "/services/ocean-freight",
+  "Hazardous Cargo Handling Services from Chennai, India",
+  "Safe and compliant hazardous cargo handling, including dangerous goods documentation, packaging, loading, regulatory coordination and transportation.",
+  "/services/chemical-cargo-handling",
 );
 
-const otherServices = getRelatedServices("/services/chemical-cargo-handling");
+const otherServices = getRelatedServices(
+  "/services/chemical-cargo-handling"
+);
 
-export default function OceanFreightPage() {
-  const oceanFreight = OceanFreight[0];
-  const service = servicesCopy.items.find((item) => item.href === "/services/chemical-cargo-handling");
+export default function ChemicalCargoHandlingPage() {
+  const chemicalCargo = ChemicalCargoHandlingService[0];
 
-  if (!service?.page || !oceanFreight) return null;
+  const service = servicesCopy.items.find(
+    (item) => item.href === "/services/chemical-cargo-handling"
+  );
+
+  if (!service?.page || !chemicalCargo) return null;
 
   return (
     <div className="service-page">
@@ -38,26 +50,26 @@ export default function OceanFreightPage() {
         backgroundImage={shipImage}
       />
 
-        <ServiceIntro
-          eyebrow={oceanFreight.subtitle}
-          title={oceanFreight.title}
-          description={oceanFreight.description}
-          image={shipImage}
-        />
+      <ServiceIntro
+        eyebrow={chemicalCargo.subtitle}
+        title={chemicalCargo.title}
+        description={chemicalCargo.description}
+        image={shipImage}
+      />
 
-        <ServiceFeatureGrid
-          kicker={oceanFreight.subtitle}
-          heading={oceanFreight.subdescription}
-          items={oceanFreight.items}
-        />
+      <ServiceFeatureGrid
+        kicker={chemicalCargo.subtitle}
+        heading={chemicalCargo.subdescription}
+        items={chemicalCargo.items}
+      />
 
-        <ServiceSteps
-          kicker={oceanFreight.stepsTitle}
-          title={oceanFreight.stepsIntro}
-          steps={oceanFreight.steps}
-        />
+      <ServiceSteps
+        kicker={chemicalCargo.stepsTitle}
+        title={chemicalCargo.stepsIntro}
+        steps={chemicalCargo.steps}
+      />
 
-        <RelatedServices items={otherServices} />
+      <RelatedServices items={otherServices} />
     </div>
   );
 }

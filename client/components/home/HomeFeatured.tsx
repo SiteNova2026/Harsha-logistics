@@ -10,7 +10,10 @@ import oceanImage from "../../public/images/svc-ocean.jpg";
 import customsImage from "../../public/images/svc-customs.jpg";
 import roadImage from "../../public/images/container-yard.jpg";
 import packagingImage from "../../public/images/svc-courier.jpg";
+import reeferImage from "../../public/images/reefer_container.png";
+import chemicalImage from "../../public/images/hazadorous_cargo_handling.png";
 import warehousingImage from "../../public/images/svc-warehouse.jpg";
+import dimensionImage from "../../public/images/over_dimensional_cargo_2.png";
 
 const serviceImages: Record<string, StaticImageData> = {
   "/services/air-freight": airImage,
@@ -19,6 +22,9 @@ const serviceImages: Record<string, StaticImageData> = {
   "/services/road-rail": roadImage,
   "/services/warehouse": warehousingImage,
   "/services/international-courier": packagingImage,
+  "/services/reefer-container-cargo": reeferImage,
+  "/services/chemical-cargo-handling": chemicalImage,
+  "/services/overdimension-cargo-handling": dimensionImage,
 };
 
 function getItemOffset(carousel: HTMLDivElement, itemIndex: number) {

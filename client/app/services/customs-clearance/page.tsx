@@ -7,7 +7,7 @@ import { CustomsClearanceService, servicesCopy } from "@/lib/constants/services"
 import { getRelatedServices } from "@/lib/constants/relatedServices";
 import { siteCopy } from "@/lib/constants/siteCopy";
 import { createPageMetadata } from "@/lib/constants/seo";
-import customsImage from "../../../public/images/svc-customs.jpg";
+import customsImage from "../../../public/images/reefer_container.png";
 import "../../styles/components/services.scss";
 
 export const metadata = createPageMetadata(
