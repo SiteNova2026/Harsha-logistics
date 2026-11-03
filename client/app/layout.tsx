@@ -105,7 +105,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
        <ToastContainer
           position="top-right"
-          autoClose={4000}
+          autoClose={3000}
           theme="colored"
           newestOnTop
           closeOnClick

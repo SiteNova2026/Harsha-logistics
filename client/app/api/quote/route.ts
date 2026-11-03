@@ -26,13 +26,23 @@ const SECTION_TITLES: Record<string, string> = {
 const FIELD_LABELS: Record<string, string> = {
   departure: "City of Departure",
   delivery: "Delivery City",
+  portOfLoading: "Port of Loading",
+  portOfDischarge: "Port of Discharge",
+  placeOfLoading: "Place of Loading",
+  placeOfDelivery: "Place of Delivery",
+  countryOfLoading: "Country of Loading",
+  countryOfDelivery: "Country of Delivery",
   incoterm: "Incoterm",
   weight: "Weight (kg)",
   width: "Width (cm)",
   height: "Height (cm)",
   length: "Length (cm)",
+  mode: "Shipment Type (LCL/FCL)",
+  containerType: "Container Type",
+  commodity: "Commodity",
   package: "Package Type",
   speed: "Delivery Speed",
+  remarks: "Remarks",
 };
 
 // Never trust the client: keep only short, non-empty string values
@@ -45,11 +55,28 @@ function cleanFreights(input: unknown): Freights {
     const clean: Record<string, string> = {};
     for (const [field, value] of Object.entries(fields as Record<string, unknown>)) {
       if (typeof value === "string" && value.trim()) {
-        clean[field] = value.trim().slice(0, 200);
+        const max = field === "remarks" ? 1000 : 200;
+        clean[field] = value.trim().slice(0, max);
       }
     }
     if (Object.keys(clean).length > 0) result[section] = clean;
   }
+
+  // Defaults + consistency (only for sections the user actually filled in)
+  if (result.air) {
+    result.air.mode = "LCL";
+  }
+  if (result.ocean) {
+    if (!["LCL", "FCL"].includes(result.ocean.mode ?? "")) {
+      result.ocean.mode = "LCL";
+    }
+    if (result.ocean.mode !== "FCL") {
+      delete result.ocean.containerType;
+    } else if (!["20ft", "40ft"].includes(result.ocean.containerType ?? "")) {
+      delete result.ocean.containerType;
+    }
+  }
+
   return result;
 }
 
@@ -114,7 +141,9 @@ export async function POST(req: NextRequest) {
         { label: "Company", value: company },
         { label: "Name", value: name },
         { label: "Email", value: email, href: `mailto:${email}` },
-        ...(phone ? [{ label: "Phone", value: phone, href: `tel:${phone.replace(/[^\d+]/g, "")}` }] : []),
+        ...(phone
+          ? [{ label: "Phone", value: phone, href: `tel:${phone.replace(/[^\d+]/g, "")}` }]
+          : []),
       ],
       sections: freightsToSections(freights),
       replyTo: { email, label: `Reply to ${name}` },

@@ -1,7 +1,7 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useState } from "react";
-import { quoteCopy } from "@/lib/constants/quote";
+import { quoteCopy, sectionFields, FieldDef } from "@/lib/constants/quote";
 import { handleSubmitQuote } from "@/utils/quoteapi";
 import {
   QuoteFormErrors,
@@ -9,39 +9,73 @@ import {
   createInitialQuoteValues,
 } from "@/utils/quoteValidation";
 
-type FieldChange = (e: ChangeEvent<HTMLInputElement>) => void;
+type InputEl = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+type FieldChange = (e: ChangeEvent<InputEl>) => void;
 
 function Field({
   label,
   name,
-  placeholder,
+  placeholder = "",
   type = "text",
   required = false,
   value,
   onChange,
   error,
+  options,
+  fixed = false,
 }: {
   label: string;
   name: string;
-  placeholder: string;
-  type?: string;
+  placeholder?: string;
+  type?: string; // text | email | tel | select | textarea
   required?: boolean;
   value: string;
   onChange: FieldChange;
   error?: string;
+  options?: { value: string; label: string }[];
+  fixed?: boolean;
 }) {
+  const cls = "common-field normal-xsmall";
+
   return (
     <label className="quote-field normal-xxsmall">
       {label}
-      <input
-        className="common-field normal-xsmall"
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        value={value}
-        onChange={onChange}
-      />
+      {type === "select" ? (
+        <span className="quote-select-wrap">
+          <select className={cls} name={name} value={value} onChange={onChange}>
+            {options?.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.label}
+              </option>
+            ))}
+          </select>
+          <span className="quote-select-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </span>
+        </span>
+      ) : type === "textarea" ? (
+        <textarea
+          className={cls}
+          name={name}
+          placeholder={placeholder}
+          rows={3}
+          value={value}
+          onChange={onChange}
+        />
+      ) : (
+        <input
+          className={cls}
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          required={required}
+          value={value}
+          onChange={onChange}
+          readOnly={fixed}
+        />
+      )}
       {error && <span className="contact-error text-red-500 text-xs">{error}</span>}
     </label>
   );
@@ -87,44 +121,56 @@ function FreightSection({
   onChange: FieldChange;
 }) {
   const { title, icon, key: sectionKey } = section;
-  const f = quoteCopy.fields;
+  const rows = sectionFields[sectionKey] ?? [];
+  const allFields = rows.flat();
 
-  // small helper so every field gets its value + onChange automatically
-  const bind = (suffix: string) => ({
-    name: `${sectionKey}${suffix}`,
-    value: values[`${sectionKey}${suffix}`] ?? "",
-    onChange,
-  });
+  const getVal = (suffix: string) => values[`${sectionKey}${suffix}`] ?? "";
+
+  // Current value of a field, falling back to its default (e.g. LCL)
+  const currentVal = (suffix: string) =>
+    getVal(suffix) || allFields.find((x) => x.suffix === suffix)?.defaultValue || "";
+
+  const isVisible = (f: FieldDef) =>
+    !f.showIf || currentVal(f.showIf.suffix) === f.showIf.equals;
 
   return (
     <fieldset className="quote-freight-section">
       <legend className="quote-section-heading">
-        <span className="quote-section-icon normal-small" aria-hidden="true"><QuoteIcon name={icon} /></span>
+        <span className="quote-section-icon normal-small" aria-hidden="true">
+          <QuoteIcon name={icon} />
+        </span>
         <span className="quote-section-title normal-xsmall">{title}</span>
       </legend>
 
-      <div className="quote-fields quote-fields-route">
-        <Field label={f.departure.label} placeholder={f.departure.placeholder} {...bind("Departure")} />
-        <Field label={f.delivery.label} placeholder={f.delivery.placeholder} {...bind("Delivery")} />
-        <Field label={f.incoterm.label} placeholder={f.incoterm.placeholder} {...bind("Incoterm")} />
-      </div>
+      {rows.map((row, i) => {
+        const visible = row.filter(isVisible);
+        const cls =
+          visible.length === 1
+            ? "quote-fields quote-fields-company"
+            : visible.length === 2
+            ? "quote-fields quote-fields-two"
+            : visible.length === 4
+            ? "quote-fields quote-fields-dimensions"
+            : "quote-fields quote-fields-route";
 
-      {sectionKey !== "courier" && (
-        <div className="quote-fields quote-fields-dimensions">
-          <Field label={f.weight.label} placeholder={f.weight.placeholder} {...bind("Weight")} />
-          <Field label={f.width.label} placeholder={f.width.placeholder} {...bind("Width")} />
-          <Field label={f.height.label} placeholder={f.height.placeholder} {...bind("Height")} />
-          <Field label={f.length.label} placeholder={f.length.placeholder} {...bind("Length")} />
-        </div>
-      )}
-
-      {sectionKey === "courier" && (
-        <div className="quote-fields quote-fields-route">
-          <Field label={f.package.label} placeholder={f.package.placeholder} {...bind("Package")} />
-          <Field label={f.weight.label} placeholder={f.weight.placeholder} {...bind("Weight")} />
-          <Field label={f.speed.label} placeholder={f.speed.placeholder} {...bind("Speed")} />
-        </div>
-      )}
+        return (
+          <div className={cls} key={i}>
+            {visible.map((f) => (
+              <Field
+                key={f.suffix}
+                label={f.label}
+                placeholder={f.placeholder}
+                type={f.type === "fixed" ? "text" : f.type}
+                options={f.options}
+                fixed={f.type === "fixed"}
+                name={`${sectionKey}${f.suffix}`}
+                value={f.type === "fixed" ? f.fixedValue ?? "" : currentVal(f.suffix)}
+                onChange={onChange}
+              />
+            ))}
+          </div>
+        );
+      })}
     </fieldset>
   );
 }
@@ -139,13 +185,37 @@ export default function QuoteForm() {
   const [loading, setLoading] = useState(false);
 
   const handleChange: FieldChange = (e) => {
-   const { name } = e.target;
+    const { name } = e.target;
     let { value } = e.target;
 
-    if (name === "phone") {
-    value = value.replace(/\D/g, ""); // keep digits only
+     const numericFields = [
+    "phone",
+    "airWeight",
+    "airHeight",
+    "airLength",
+    "airWidth",
+    "oceanWeight",
+    "oceanHeight",
+    "oceanWeight",
+    "oceanWidth",
+    "roadWidth",
+    "roadHeight",
+    "roadLength",
+    "courierWeight"
+  ];
+
+  if (numericFields.includes(name)) {
+    value = value.replace(/\D/g, "");
   }
-    setValues((prev) => ({ ...prev, [name]: value }));
+
+    setValues((prev) => {
+      const next = { ...prev, [name]: value };
+      // Switching ocean back to LCL clears the container choice
+      if (name === "oceanMode" && value !== "FCL") {
+        next.oceanContainerType = "";
+      }
+      return next;
+    });
     setErrors((prev) => ({ ...prev, [name]: "", freight: "" }));
   };
 
@@ -166,7 +236,9 @@ export default function QuoteForm() {
 
           <fieldset className="quote-user-section reveal-on-scroll">
             <legend className="quote-section-heading">
-              <span className="quote-section-icon normal-small" aria-hidden="true"><QuoteIcon name="send" /></span>
+              <span className="quote-section-icon normal-small" aria-hidden="true">
+                <QuoteIcon name="send" />
+              </span>
               <span className="quote-section-title normal-xsmall">{quoteCopy.userData}</span>
             </legend>
             <div className="quote-fields quote-fields-company">
@@ -221,7 +293,9 @@ export default function QuoteForm() {
             />
           ))}
 
-          {errors.freight && <p className="contact-error text-red-500 uppercase text-sm">{errors.freight}</p>}
+          {errors.freight && (
+            <p className="contact-error text-red-500 uppercase text-sm">{errors.freight}</p>
+          )}
 
           <button className="quote-submit normal-small font-bold" type="submit" disabled={loading}>
             {loading ? "Sending..." : quoteCopy.submit}

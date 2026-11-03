@@ -485,3 +485,42 @@ body {
     grid-template-columns: 1.3fr 0.7fr 0.9fr;
   }
 }
+
+.quote-select-wrap {
+  position: relative;
+  display: block;
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding-right: 2.25rem;
+    cursor: pointer;
+
+    option {
+      background: #02143a;
+      color: #fff;
+    }
+  }
+}
+
+.quote-select-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  color: #00e5ee;
+  pointer-events: none; // clicks go through to the select
+}
+
+.quote-fields-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem; // use the same gap as .quote-fields-dimensions
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
