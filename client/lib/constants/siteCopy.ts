@@ -20,7 +20,7 @@ export const siteCopy = {
   },
   breadcrumbSeparator: "/",
   footer: {
-    description: "a Chennai based shipping agency and customs house, serving Indian importers and exporters with pride since 2011.",
+    description: "a Chennai based shipping agency and customs house, serving Indian importers and exporters with pride since 2004.",
     explore: "Explore",
     reachUs: "Reach Us",
     copyright: "All rights reserved.",

@@ -57,8 +57,17 @@ export default function Footer() {
                 {company.address["line-2"]}<br />
                 {company.address["line-3"]}
               </li>
-              <li>{company.phone}</li>
-              <li>{company.phoneAlt}</li>
+                <li>
+              <strong>{company.managingDirector}</strong> (Managing Director)
+              <br />
+              <a href={`tel:${company.phone}`}>{company.phone}</a>
+            </li>
+
+            <li>
+              <strong>{company.ceo}</strong> (CEO)
+              <br />
+              <a href={`tel:${company.phoneAlt}`}>{company.phoneAlt}</a>
+            </li>
               <li>
                 <a href={`mailto:${company.email}`}>{company.email}</a>
               </li>

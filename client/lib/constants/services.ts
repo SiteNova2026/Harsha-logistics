@@ -11,6 +11,19 @@ export const servicesCopy = {
   items: [
     {
       id: "01",
+      label: "Customs Clearance",
+      description:
+        "Licensed CHA services with expert documentation, HS classification and duty optimisation.",
+      icon: "document",
+      href: "/services/customs-clearance",
+      page: {
+        eyebrow: "service 04",
+        title: "Customs Clearance",
+        description: "Licensed CHA and documentation.",
+      },
+    },
+      {
+      id: "02",
       label: "Ocean Freight",
       description:
         "FCL, LCL and break-bulk shipping across every major trade lane, backed by dedicated route specialists.",
@@ -23,7 +36,7 @@ export const servicesCopy = {
       },
     },
     {
-      id: "02",
+      id: "03",
       label: "Air Freight",
       description:
         "Priority, deferred and charter air cargo with real-time visibility and door-to-door coverage.",
@@ -36,29 +49,16 @@ export const servicesCopy = {
       },
     },
     {
-      id: "03",
-      label: "Road & Rail",
+      id: "04",
+      label: "Road Transport",
       description:
-        "Domestic distribution, cross-border trucking and multimodal rail solutions across the subcontinent.",
+        "Reliable domestic and cross-border road freight with efficient, flexible delivery solutions.",
       icon: "truck",
       href: "/services/road-rail",
       page: {
         eyebrow: "service 03",
-        title: "Road & Rail",
+        title: "Road Transport",
         description: "Domestic & cross-border transport.",
-      },
-    },
-    {
-      id: "04",
-      label: "Customs Clearance",
-      description:
-        "Licensed CHA services with expert documentation, HS classification and duty optimisation.",
-      icon: "document",
-      href: "/services/customs-clearance",
-      page: {
-        eyebrow: "service 04",
-        title: "Customs Clearance",
-        description: "Licensed CHA and documentation.",
       },
     },
     {
@@ -195,7 +195,7 @@ export const AirFreightService = [
 
 export const RoadRailService = [
   {
-    title: "Road & Rail",
+    title: "Road Transport",
     description: "Our surface transport network links every inland port, ICD and industrial hub. Trailers, containerised trucking and rail are combined to give the most cost-effective inland freight with low transit times.",
     subtitle: "Key features",
     subdescription: "What you get",
