@@ -191,11 +191,12 @@
   .related-services-block h3 {
     margin: 0.75rem 0 0;
     font-family: var(--font-serif, serif);
-    font-size: clamp(2rem, 3vw, 3rem);
+    font-size: clamp(1.5rem, 2vw, 2rem);
     line-height: 1.1;
     font-weight: 400;
     color: var(--foreground);
   }
+  
 
   .feature-grid {
     display: grid;

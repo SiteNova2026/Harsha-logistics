@@ -136,49 +136,63 @@ export const servicesCopy = {
 export const OceanFreight = [
   {
     title: "Ocean Freight",
-    description: "As a licensed Chennai shipping agency we book, consolidate and move containerised and break-bulk cargo on every major east–west and intra-Asia trade lane. Long-standing carrier relationships give our customers dependable space, competitive rates and clear sailing schedules.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    description:
+      "We provide comprehensive ocean freight solutions designed to simplify international cargo transportation. Through established partnerships with leading global shipping lines and an extensive carrier network, we manage FCL, LCL, break-bulk, and project cargo shipments across major international trade routes. From strategic freight planning and competitive rate negotiations to shipment coordination and delivery, we ensure reliable, cost-effective, and efficient ocean transportation for businesses worldwide.",
+
+    subtitle: "Our capabilities",
+    subdescription: "Reliable ocean transportation solutions for global trade",
+
     items: [
       {
-        title: "FCL & LCL",
-        description: "Full-container bookings plus weekly LCL consolidations from Chennai and all major Indian ports.",
+        title: "Full Container Load (FCL) & Less than Container Load (LCL)",
+        description:
+          "Flexible container shipping solutions for full and partial cargo loads, offering efficient consolidation, competitive freight rates, and dependable connections across major international ports.",
       },
       {
-        title: "Break-bulk & project cargo",
-        description: "Over-dimensional and heavy-lift movements planned with surveyors and lashing specialists.",
+        title: "Break-Bulk & Project Cargo",
+        description:
+          "Specialised transportation for oversized, heavy-lift, and non-containerised cargo, supported by detailed cargo planning, equipment coordination, and professional handling arrangements.",
       },
       {
-        title: "Carrier partnerships",
-        description: "Allocation with leading global lines so your cargo sails on schedule even in peak season.",
+        title: "Global Carrier Network",
+        description:
+          "Strong relationships with established international shipping lines enable us to secure competitive freight rates, reliable vessel space, and flexible sailing schedules across key trade lanes.",
       },
       {
-        title: "Door-to-door options",
-        description: "Pick-up, haulage, customs and final delivery handled under one bill of lading.",
+        title: "Door-to-Door Freight Solutions",
+        description:
+          "Integrated logistics services covering cargo collection, inland transportation, export documentation, customs clearance, ocean freight, and final-mile delivery.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
+
+    stepsTitle: "Our shipping process",
+    stepsIntro: "A seamless journey from booking to final destination",
+
     steps: [
       {
         number: "01",
-        title: "Share cargo details, incoterms and preferred sailing window.",
+        title:
+          "Cargo specifications, shipment requirements, Incoterms, and preferred sailing schedules are collected and reviewed.",
       },
       {
         number: "02",
-        title: "We compare carrier options and issue a clear all-in quotation.",
+        title:
+          "Suitable shipping lines, routing options, transit times, and competitive freight quotations are evaluated.",
       },
       {
         number: "03",
-        title: "Booking confirmed, containers positioned and documentation prepared.",
+        title:
+          "Shipment bookings are confirmed, container arrangements are coordinated, and shipping documentation is prepared.",
       },
       {
         number: "04",
-        title: "Cargo loaded, customs cleared and B/L released.",
+        title:
+          "Cargo is received, loaded, export customs formalities are completed, and the Bill of Lading is processed.",
       },
       {
         number: "05",
-        title: "Sailing tracked to destination with proactive milestone updates.",
+        title:
+          "Shipments are monitored throughout transit, with regular milestone updates and destination coordination until delivery.",
       },
     ],
   },
@@ -187,151 +201,187 @@ export const OceanFreight = [
 export const AirFreightService = [
   {
     title: "Air Freight",
-    description: "When time decides the value of a shipment, our air desk secures capacity on scheduled and charter services worldwide. From perishable cargo to time-sensitive deliveries, we manage the paperwork, booking slots and customs coordination to keep your freight moving.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    description:
+      "We deliver reliable and efficient air freight solutions for businesses requiring fast, secure, and time-sensitive international transportation. Through our established global airline network, we coordinate scheduled and charter cargo services to major destinations worldwide. From urgent commercial shipments and temperature-sensitive goods to specialised and oversized cargo, our team manages every stage of the transportation process with precision, ensuring timely movement, regulatory compliance, and complete shipment visibility.",
+
+    subtitle: "Our capabilities",
+    subdescription: "Flexible air cargo solutions for time-critical global shipments",
+
     items: [
       {
-        title: "Priority & deferred",
-        description: "Choose next-flight-out or economical scheduled services for urgent and non-urgent cargo.",
+        title: "Priority & Economy Air Freight",
+        description:
+          "Flexible air transportation options ranging from priority next-flight services to cost-effective scheduled cargo solutions, tailored to your delivery timelines and budget requirements.",
       },
       {
-        title: "Charter solutions",
-        description: "Dedicated aircraft for urgent project, perishables or oversized consignments.",
+        title: "Aircraft Charter Solutions",
+        description:
+          "Dedicated aircraft arrangements for urgent consignments, oversized shipments, specialised project cargo, and high-volume transportation requirements.",
       },
       {
-        title: "Temperature-sensitive",
-        description: "Cool chain handling for pharma, perishables and delicate instruments.",
+        title: "Temperature-Controlled Cargo",
+        description:
+          "Specialised handling and coordinated temperature-controlled transportation for pharmaceutical products, perishable commodities, and other temperature-sensitive shipments.",
       },
       {
-        title: "Real-time visibility",
-        description: "Airway bill tracking with milestone updates from tender to delivery.",
+        title: "Shipment Tracking & Visibility",
+        description:
+          "End-to-end shipment monitoring through Air Waybill (AWB) tracking, with timely milestone updates covering cargo acceptance, departure, arrival, and final delivery.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
+
+    stepsTitle: "Our shipping process",
+    stepsIntro: "A streamlined approach from booking to final delivery",
+
     steps: [
       {
         number: "01",
-        title: "Send weight, dimensions and required delivery date.",
+        title:
+          "Shipment requirements, including cargo weight, dimensions, commodity details, and delivery deadlines, are collected and evaluated.",
       },
       {
         number: "02",
-        title: "We reserve airline capacity and confirm rates and routing.",
+        title:
+          "Suitable airlines, flight schedules, routing options, available capacity, and freight rates are evaluated and confirmed.",
       },
       {
         number: "03",
-        title: "Cargo collected, screened, packed and labelled to IATA standards.",
+        title:
+          "Cargo collection, security screening, packaging, labelling, and airline documentation are coordinated in accordance with applicable requirements.",
       },
       {
         number: "04",
-        title: "Export customs cleared and cargo tendered to the carrier.",
+        title:
+          "Export customs formalities are completed and the shipment is tendered to the selected airline for transportation.",
       },
       {
         number: "05",
-        title: "Import clearance and door delivery at destination.",
+        title:
+          "Arrival coordination, destination customs clearance, and final-mile delivery arrangements are managed through to shipment completion.",
       },
     ],
   },
 ];
 
+
 export const RoadRailService = [
   {
-    title: "Road Transport",
-    description: "Our surface transport network links every inland port, ICD and industrial hub. Trailers, containerised trucking and rail are combined to give the most cost-effective inland freight with low transit times.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    title: "Road Transportation",
+    description:
+      "We provide reliable and efficient road transportation solutions for seamless cargo movement across domestic supply chains. Our extensive transportation network connects major seaports, inland container depots (ICDs), manufacturing facilities, warehouses, and distribution centres. With flexible vehicle options, strategic route planning, and coordinated logistics operations, we ensure safe, timely, and cost-effective transportation for a wide range of cargo requirements.",
+
+    subtitle: "Our capabilities",
+    subdescription: "Reliable road freight solutions for seamless cargo movement",
+
     items: [
       {
-        title: "Port haulage",
-        description: "Container drayage between factories, ICDs and port terminals.",
+        title: "Port & Container Haulage",
+        description:
+          "Efficient container transportation between seaports, factories, inland container depots, and distribution centres, supported by coordinated vehicle deployment and timely cargo movement.",
       },
       {
-        title: "Full & part loads",
-        description: "FTL and LTL movement with GPS-enabled vehicles and flexible scheduling.",
+        title: "Full Truck Load (FTL) & Less Than Truck Load (LTL)",
+        description:
+          "Flexible transportation solutions for full and partial cargo loads, with suitable vehicle allocation, optimised routing, and scheduled deliveries to meet diverse shipping requirements.",
       },
       {
-        title: "Rail multimodal",
-        description: "Cost-effective rail options for long-haul domestic and cross-border corridors.",
+        title: "Heavy & Over-Dimensional Cargo",
+        description:
+          "Specialised road transportation for heavy machinery, oversized equipment, and project cargo using appropriate trailers, route assessments, and professional handling arrangements.",
       },
       {
-        title: "Cross-border",
-        description: "Customised movements to neighbouring markets with route planning support.",
+        title: "GPS Tracking & Delivery Coordination",
+        description:
+          "Shipment monitoring and transportation coordination with vehicle tracking, estimated arrival updates, and delivery confirmation to maintain visibility throughout transit.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
+
+    stepsTitle: "Our transportation process",
+    stepsIntro: "A coordinated journey from pickup to final delivery",
+
     steps: [
       {
         number: "01",
-        title: "Confirm pickup and delivery point and cargo profile.",
+        title:
+          "Pickup and delivery locations, cargo specifications, dimensions, and transportation requirements are assessed.",
       },
       {
         number: "02",
-        title: "Optimal vehicle or rail mode selected and quoted.",
+        title:
+          "Suitable vehicle types, transportation routes, delivery schedules, and freight charges are evaluated and confirmed.",
       },
       {
         number: "03",
-        title: "Loading supervised with photographic proof.",
+        title:
+          "Vehicle deployment, cargo loading, securing arrangements, and transportation documentation are coordinated.",
       },
       {
         number: "04",
-        title: "In-transit monitoring and ETA updates.",
+        title:
+          "Shipments are monitored during transit, with route coordination, estimated arrival updates, and proactive communication.",
       },
       {
         number: "05",
-        title: "Delivery with signed proof of delivery.",
+        title:
+          "Cargo is delivered to the designated destination, followed by delivery confirmation and Proof of Delivery (POD) documentation.",
       },
     ],
   },
 ];
+
 
 export const CustomsClearanceService = [
   {
     title: "Customs Clearance",
     description: "Operating under CB Licence No. CHN/18/2011, our in-house customs team manages import and export documentation for all major Indian ports and airports. Accurate classification and complete paperwork keep your cargo moving without delays.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    subtitle: "Our capabilities",
+    subdescription: "Comprehensive customs solutions for seamless global trade",
     items: [
       {
         title: "Import & export filing",
-        description: "Bill of entry and shipping bill filing with accurate customs declarations.",
+        description: 
+          "End-to-end preparation and filing of Bills of Entry, Shipping Bills, and supporting customs documentation in accordance with applicable regulations.",
       },
       {
-        title: "HS classification",
-        description: "Correct tariff headings to avoid penalties and reassessments.",
+        title: "HSN Code classification",
+        description: "Accurate Harmonised System of Nomenclature (HSN) code classification to ensure correct tariff assessment, regulatory compliance, and reduced risk of customs disputes.",
       },
       {
-        title: "Duty optimisation",
-        description: "Review of customs exemptions, concessions and valuation strategies.",
+        title: "Customs Duty & Tax Advisory",
+        description: "Expert guidance on applicable customs duties, exemptions, trade concessions, and valuation requirements to support cost-effective import and export operations.",
       },
       {
-        title: "Regulatory liaison",
-        description: "Coordination with port and customs officers for smooth release and compliance.",
+        title: "Customs & Regulatory Coordination",
+        description: "Professional coordination with customs authorities, port officials, and relevant regulatory agencies to facilitate timely assessments, inspections, and cargo release.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
-    steps: [
+    stepsTitle: "Our clearance process",
+    stepsIntro: "A structured approach from documentation to cargo release",
+     steps: [
       {
         number: "01",
-        title: "Documents reviewed for completeness before arrival.",
+        title:
+          "Document verification and compliance checks are completed before cargo arrival.",
       },
       {
         number: "02",
-        title: "Classification and duty calculation confirmed with you.",
+        title:
+          "HS code classification, customs valuation, and applicable duty calculations are reviewed.",
       },
       {
         number: "03",
-        title: "Declaration filed and duty paid.",
+        title:
+          "Import or export declarations are accurately prepared and submitted to customs authorities.",
       },
       {
         number: "04",
-        title: "Examination and assessment handled by our team.",
+        title:
+          "Customs assessment, cargo examination, and regulatory formalities are coordinated by our team.",
       },
       {
         number: "05",
-        title: "Out-of-charge obtained and cargo released.",
+        title:
+          "Customs clearance approval is secured and cargo is released for onward transportation or delivery.",
       },
     ],
   },
@@ -339,203 +389,262 @@ export const CustomsClearanceService = [
 
 export const WarehouseService = [
   {
-    title: "Warehouse",
-    description: "Secure covered storage close to the port keeps your inventory ready for dispatch. We receive, sort, pick, palletise and pack cargo with stock controls that keep operations transparent and efficient.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    title: "Warehousing & Storage",
+    description:
+      "We provide comprehensive warehousing and storage solutions designed to support efficient inventory management and seamless supply chain operations. Our strategically managed storage facilities offer secure cargo handling, organised inventory management, and flexible storage arrangements for businesses across various industries. From cargo receiving and inspection to packing, order processing, and dispatch, we ensure every stage of warehouse operations is managed with accuracy, security, and operational efficiency.",
+
+    subtitle: "Our capabilities",
+    subdescription: "Flexible warehousing solutions for efficient inventory management",
+
     items: [
       {
-        title: "Bonded & general storage",
-        description: "Short- and long-term space with 24/7 security and fire protection.",
+        title: "Bonded & General Warehousing",
+        description:
+          "Secure storage facilities for bonded and non-bonded cargo, offering flexible short-term and long-term storage arrangements with appropriate security and fire safety measures.",
       },
       {
-        title: "Value-added handling",
-        description: "Palletisation, shrink-wrapping, export packing, labelling and kitting.",
+        title: "Value-Added Warehouse Services",
+        description:
+          "Professional cargo handling services including palletisation, shrink-wrapping, labelling, export packing, repacking, sorting, and customised packaging solutions.",
       },
       {
-        title: "Inventory reporting",
-        description: "Periodic stock statements and inventory reports for planning and reconciliation.",
+        title: "Inventory Management & Reporting",
+        description:
+          "Systematic inventory monitoring with regular stock updates, warehouse reports, stock reconciliation, and accurate inventory records to support better business planning.",
       },
       {
-        title: "Distribution ready",
-        description: "Pick, pack and dispatch to support onward movement and export deadlines.",
+        title: "Order Fulfilment & Distribution",
+        description:
+          "Efficient picking, packing, staging, and dispatch operations to ensure accurate order processing and timely distribution to designated destinations.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
+
+    stepsTitle: "Our warehousing process",
+    stepsIntro: "A structured approach from cargo receipt to dispatch",
+
     steps: [
       {
         number: "01",
-        title: "Storage volume and handling needs assessed.",
+        title:
+          "Storage requirements, cargo volume, handling specifications, and inventory management needs are evaluated.",
       },
       {
         number: "02",
-        title: "Cargo received, inspected and put away.",
+        title:
+          "Incoming cargo is received, inspected, documented, and allocated to the appropriate storage location.",
       },
       {
         number: "03",
-        title: "Value-added handling performed as instructed.",
+        title:
+          "Required value-added services, including sorting, labelling, palletisation, and packaging, are carried out.",
       },
       {
         number: "04",
-        title: "Stock reported and reconciled.",
+        title:
+          "Inventory records are updated, stock levels are monitored, and periodic reports are provided for reconciliation.",
       },
       {
         number: "05",
-        title: "Release and dispatch on your instruction.",
+        title:
+          "Cargo is picked, prepared, and released for dispatch according to customer instructions and delivery schedules.",
       },
     ],
   },
 ];
+
 
 export const InternationalCourierService = [
   {
     title: "International Courier",
-    description: "For documents, samples and small parcels we offer express door-to-door courier to more than 200 countries, with customs paperwork handled at both ends and full online tracking.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    description:
+      "We provide reliable international courier solutions for businesses and individuals seeking fast, secure, and efficient delivery across global destinations. Through our established international express courier network, we facilitate the transportation of commercial documents, business samples, and small parcels to more than 200 destinations worldwide. From shipment collection and documentation to customs coordination and final delivery, we ensure a streamlined shipping experience with complete shipment visibility and dependable service.",
+
+    subtitle: "Our capabilities",
+    subdescription: "Global express delivery solutions with end-to-end coordination",
+
     items: [
       {
-        title: "Document & parcel express",
-        description: "Fast-tracked movement of commercial documents and small parcels.",
+        title: "Express Document & Parcel Delivery",
+        description:
+          "Reliable and time-sensitive international delivery services for business documents, commercial samples, and small parcels through established express courier networks.",
       },
       {
-        title: "200+ destinations",
-        description: "Global coverage through established express partners.",
+        title: "Global Delivery Network",
+        description:
+          "Extensive international courier coverage across 200+ destinations, supported by established logistics partners and coordinated delivery networks.",
       },
       {
-        title: "Customs paperwork",
-        description: "Invoices, declarations and duty guidance prepared for you.",
+        title: "Customs Documentation & Compliance",
+        description:
+          "Assistance with commercial invoices, shipment declarations, supporting documentation, and applicable customs requirements to facilitate smooth international clearance.",
       },
       {
-        title: "Pick-up service",
-        description: "Collection from your office anywhere in Chennai.",
+        title: "Door-to-Door Pickup & Delivery",
+        description:
+          "Convenient shipment collection from offices and business locations across Chennai, with coordinated international transportation and final-mile delivery to the recipient's address.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
+
+    stepsTitle: "Our courier process",
+    stepsIntro: "A seamless journey from pickup to international delivery",
+
     steps: [
       {
         number: "01",
-        title: "Tell us the destination, weight and contents.",
+        title:
+          "Destination details, shipment weight, dimensions, contents, and delivery requirements are collected.",
       },
       {
         number: "02",
-        title: "Rate and transit time confirmed instantly.",
+        title:
+          "Suitable courier services, estimated transit times, applicable charges, and delivery options are evaluated and confirmed.",
       },
       {
         number: "03",
-        title: "Shipment collected and documented.",
+        title:
+          "Shipment collection is arranged, and packaging, commercial invoices, and required shipping documentation are completed.",
       },
       {
         number: "04",
-        title: "Tracking number issued and monitored.",
+        title:
+          "A tracking reference is issued, allowing shipment progress to be monitored throughout international transit.",
       },
       {
         number: "05",
-        title: "Delivered with proof of delivery.",
+        title:
+          "Destination customs clearance and final-mile delivery are coordinated, followed by delivery confirmation.",
       },
     ],
   },
 ];
 
+
 export const OverdimensionCargoService = [
   {
-    title: "Overdimension Cargo Handling",
-    description: "When the cargo is too large, too heavy or too complex for normal freight movement, we build tailored handling plans that factor in route restrictions, lifting methods, permits and site readiness.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    title: "Over-Dimensional Cargo Handling",
+    description:
+      "We specialise in the planning and execution of over-dimensional and heavy-lift cargo movements that require specialised equipment, engineering expertise, and carefully coordinated logistics operations. From oversized industrial machinery and infrastructure components to heavy project equipment, we develop customised transportation and handling solutions based on cargo specifications, route feasibility, lifting requirements, and regulatory approvals. Our team coordinates every stage of the operation to ensure safe, compliant, and efficient cargo movement from origin to final destination.",
+
+    subtitle: "Our capabilities",
+    subdescription: "Specialised project logistics for complex and oversized cargo",
+
     items: [
       {
-        title: "Project survey & planning",
-        description: "Route surveys, dimensional checks and lifting strategy planning before dispatch.",
+        title: "Project Survey & Logistics Planning",
+        description:
+          "Comprehensive cargo assessments, dimensional surveys, route inspections, and feasibility studies to develop suitable transportation and handling strategies for complex project shipments.",
       },
       {
-        title: "Heavy-lift coordination",
-        description: "Specialist lifting, rigging and secure loading arrangements for out-of-gauge cargo.",
+        title: "Heavy-Lift & Specialised Handling",
+        description:
+          "Coordination of specialised lifting equipment, cranes, rigging arrangements, and secure loading operations to handle oversized and heavy cargo with precision and safety.",
       },
       {
-        title: "Permit support",
-        description: "Coordination with authorities, carriers and route planners for compliant movement.",
+        title: "Transportation Permits & Regulatory Coordination",
+        description:
+          "Assistance with required transportation permits, route approvals, regulatory documentation, and coordination with relevant authorities to facilitate compliant cargo movement.",
       },
       {
-        title: "End-to-end handling",
-        description: "From port handling to inland delivery, every leg is monitored and documented.",
+        title: "End-to-End Project Cargo Management",
+        description:
+          "Integrated coordination covering port operations, cargo handling, specialised transportation, unloading, and final-site delivery, with continuous monitoring throughout the movement.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
+
+    stepsTitle: "Our project execution process",
+    stepsIntro: "A carefully coordinated journey from planning to final delivery",
+
     steps: [
       {
         number: "01",
-        title: "Share dimensions, route, origin and destination details.",
+        title:
+          "Cargo dimensions, gross weight, origin, destination, handling requirements, and project specifications are collected and evaluated.",
       },
       {
         number: "02",
-        title: "We assess feasibility, permits and the best handling method.",
+        title:
+          "Route feasibility, transportation equipment, lifting requirements, site conditions, and applicable permits are assessed.",
       },
       {
         number: "03",
-        title: "Cargo is pre-planned with lifting, escort and safety requirements.",
+        title:
+          "Detailed operational plans are prepared, covering specialised equipment, lifting arrangements, cargo securing, and safety measures.",
       },
       {
         number: "04",
-        title: "Movement is coordinated with carriers, terminals and local authorities.",
+        title:
+          "Transportation and handling operations are coordinated with carriers, port terminals, equipment providers, and relevant authorities.",
       },
       {
         number: "05",
-        title: "Cargo is delivered with milestone tracking and proof of safe handling.",
+        title:
+          "Cargo movement is monitored through key operational milestones, followed by safe unloading, delivery confirmation, and completion documentation.",
       },
     ],
   },
 ];
+
 
 export const ReeferContainerCargoService = [
   {
     title: "Reefer Container Cargo",
-    description: "Temperature-sensitive cargo demands precise cold-chain controls. We coordinate reefers, pre-cooling, monitoring and handoff procedures to preserve shipping quality across transit, customs and final delivery.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    description:
+      "We provide specialised reefer container transportation solutions for temperature-sensitive commodities that require controlled environmental conditions throughout the supply chain. Our refrigerated cargo services are designed to maintain product quality and cargo integrity through careful temperature planning, equipment coordination, pre-cooling arrangements, and continuous shipment monitoring. From perishable food products and seafood to pharmaceutical shipments and other sensitive commodities, we manage every stage of the cold-chain process with precision and reliability.",
+
+    subtitle: "Our capabilities",
+    subdescription: "Reliable temperature-controlled logistics for sensitive cargo",
+
     items: [
       {
-        title: "Cold-chain planning",
-        description: "Temperature profiles mapped to product requirements and routing duration.",
+        title: "Cold-Chain Logistics Planning",
+        description:
+          "Customised temperature management plans based on commodity specifications, required temperature ranges, transit duration, and destination requirements to maintain cargo quality throughout transportation.",
       },
       {
-        title: "Pre-cooling & monitoring",
-        description: "Pre-cooling, seal control and real-time reefer status updates throughout the journey.",
+        title: "Pre-Cooling & Temperature Monitoring",
+        description:
+          "Reefer container preparation, pre-cooling coordination, temperature setting verification, seal management, and ongoing equipment status monitoring throughout the shipment journey.",
       },
       {
-        title: "Perishable cargo support",
-        description: "Handling for fruits, vegetables, dairy, seafood, pharma and other sensitive loads.",
+        title: "Perishable & Temperature-Sensitive Cargo",
+        description:
+          "Specialised transportation arrangements for fresh fruits, vegetables, dairy products, seafood, frozen food, pharmaceutical products, and other temperature-sensitive commodities.",
       },
       {
-        title: "Customs & inland handoff",
-        description: "Fast customs coordination and streamlined handover to delivery partners at destination.",
+        title: "Customs Clearance & Destination Coordination",
+        description:
+          "Coordinated customs documentation, priority clearance arrangements where available, refrigerated cargo handover, and inland transportation planning to minimise unnecessary delays.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
+
+    stepsTitle: "Our cold-chain process",
+    stepsIntro: "A controlled journey from cargo preparation to final delivery",
+
     steps: [
       {
         number: "01",
-        title: "Share product type, temperature range and booking timeline.",
+        title:
+          "Commodity details, required temperature range, cargo volume, packaging specifications, and shipment schedules are collected and reviewed.",
       },
       {
         number: "02",
-        title: "We plan the reefer equipment, route and control points.",
+        title:
+          "Suitable reefer containers, transportation routes, equipment requirements, and temperature control arrangements are planned.",
       },
       {
         number: "03",
-        title: "Cargo is loaded, sealed and pre-cooled in line with your requirements.",
+        title:
+          "Refrigerated containers are prepared, required temperature settings are verified, and cargo loading and sealing are coordinated.",
       },
       {
         number: "04",
-        title: "Temperature and condition are monitored from port to destination.",
+        title:
+          "Temperature conditions, equipment performance, and shipment milestones are monitored throughout transportation and transit.",
       },
       {
         number: "05",
-        title: "Delivery is coordinated with proof of condition and handover records.",
+        title:
+          "Destination customs coordination, refrigerated cargo handover, and final delivery arrangements are completed with appropriate shipment and condition records.",
       },
     ],
   },
@@ -543,50 +652,64 @@ export const ReeferContainerCargoService = [
 
 export const ChemicalCargoHandlingService = [
   {
-    title: "Hazardous Cargo Handling",
-    description: "Hazardous and chemical cargo requires disciplined handling, documentation and regulatory compliance. We manage the safe movement of dangerous goods from collection to discharge with specialist support.",
-    subtitle: "Key features",
-    subdescription: "What you get",
+    title: "Hazardous & Chemical Cargo Handling",
+    description:
+      "We provide specialised logistics solutions for the safe and compliant transportation of hazardous materials and chemical cargo. Understanding the complexities of dangerous goods transportation, our team coordinates cargo classification, regulatory documentation, packaging requirements, safety procedures, and transportation arrangements in accordance with applicable international and domestic regulations. From industrial chemicals and flammable substances to other regulated materials, we prioritise cargo safety, regulatory compliance, and operational control throughout the shipping process.",
+
+    subtitle: "Our capabilities",
+    subdescription: "Specialised logistics solutions for safe and compliant cargo movement",
+
     items: [
       {
-        title: "DG compliance",
-        description: "Correct packaging, labeling and documentation for dangerous goods shipments.",
+        title: "Dangerous Goods Classification & Compliance",
+        description:
+          "Coordination of dangerous goods classification, UN number verification, hazard identification, and shipment documentation in accordance with applicable IMDG Code, IATA DGR, and relevant regulatory requirements.",
       },
       {
-        title: "Safe packing & loading",
-        description: "Secure loading plans, segregation and handling controls for hazardous materials.",
+        title: "Specialised Packaging & Cargo Handling",
+        description:
+          "Coordination of approved packaging arrangements, hazard labelling, cargo segregation, secure loading, and appropriate handling procedures based on the nature and classification of the materials.",
       },
       {
-        title: "Authority coordination",
-        description: "Documentation support and liaison with port, carrier and regulatory stakeholders.",
+        title: "Regulatory Documentation & Authority Coordination",
+        description:
+          "Assistance with Dangerous Goods Declarations, Safety Data Sheets (SDS), transport documentation, and coordination with shipping lines, port authorities, and relevant regulatory agencies.",
       },
       {
-        title: "Risk-aware movement",
-        description: "Route and cargo planning built around safety, product profile and transit constraints.",
+        title: "Risk Assessment & Transportation Planning",
+        description:
+          "Careful evaluation of cargo characteristics, handling requirements, transportation routes, carrier restrictions, and operational risks to support safe and compliant shipment movement.",
       },
     ],
-    stepsTitle: "How it works",
-    stepsIntro: "From enquiry to delivery",
+
+    stepsTitle: "Our handling process",
+    stepsIntro: "A controlled approach from cargo assessment to final delivery",
+
     steps: [
       {
         number: "01",
-        title: "Share product class, quantity, origin and destination details.",
+        title:
+          "Cargo details, UN number, hazard class, quantity, Safety Data Sheet, and origin and destination requirements are collected and reviewed.",
       },
       {
         number: "02",
-        title: "We assess compliance needs, packaging and carrier suitability.",
+        title:
+          "Applicable regulatory requirements, packaging standards, carrier acceptance conditions, and transportation arrangements are evaluated.",
       },
       {
         number: "03",
-        title: "Documentation and safety labeling are prepared before dispatch.",
+        title:
+          "Required dangerous goods declarations, supporting documentation, hazard labels, and safety arrangements are coordinated before dispatch.",
       },
       {
         number: "04",
-        title: "Cargo is loaded and monitored under strict handling procedures.",
+        title:
+          "Cargo loading, segregation, transportation, and shipment monitoring are coordinated in accordance with applicable safety procedures.",
       },
       {
         number: "05",
-        title: "Arrival, customs and release are coordinated with complete reporting.",
+        title:
+          "Arrival arrangements, customs formalities, regulatory coordination, and cargo release are managed with appropriate shipment documentation.",
       },
     ],
   },
