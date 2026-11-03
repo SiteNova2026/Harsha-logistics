@@ -11,7 +11,7 @@ import roadImage from "../../../public/images/container-yard.jpg";
 import "../../styles/components/services.scss";
 
 export const metadata = createPageMetadata(
-  "Road & Rail Freight Transport in India",
+  "Road Transport Services",
   "Arrange domestic distribution, cross-border trucking and multimodal rail freight with Harsha Logistics across India and the subcontinent.",
   "/services/road-rail",
 );
