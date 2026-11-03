@@ -58,6 +58,35 @@ export function ServiceIcon({ name }: { name: string }) {
     );
   }
 
+   if (name === "reefer") {
+    return (
+      <svg {...commonProps}>
+        <rect x="3" y="4" width="18" height="16" rx="1" />
+        <path d="M7 4v16M11 4v16M15 4v16M19 4v16" />
+        <path d="M12 7v6m-2-4 4 4m0-4-4 4" />
+      </svg>
+    );
+  }
+  
+   if (name === "chemical") {
+    return (
+      <svg {...commonProps}>
+        <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" />
+        <path d="M7 15h10M10 12h.01M14 17h.01" />
+      </svg>
+    );
+  }
+  if (name === "overdimension") {
+    return (
+      <svg {...commonProps}>
+        <path d="M2 16h20M4 16V9h10v7M14 11h4l3 3v2" />
+        <path d="M7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+        <path d="M3 6h18M3 6l2-2M3 6l2 2M21 6l-2-2M21 6l-2 2" />
+      </svg>
+    );
+  }
+
+
   return (
     <svg {...commonProps}>
       <path d="M3 15h18M5 15V9l7-4 7 4v6M7 15v3h10v-3" />

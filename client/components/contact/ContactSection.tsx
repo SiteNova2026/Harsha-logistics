@@ -47,12 +47,30 @@ export default function ContactSection() {
                 {company.address["line-3"]}
               </p>
             </div>
-            <div className="contact-detail">
-              <h3 className="contact-detail-label normal-xsmall">{contactCopy.phone}</h3>
-              <p className="contact-detail-value normal-small">{company.phone}</p>
-              <p className="contact-detail-value normal-small">{company.phoneAlt}</p>
-            </div>
-            <div className="contact-detail">
+                <div className="contact-detail">
+          <h3 className="contact-detail-label normal-xsmall">
+            Managing Director
+          </h3>
+          <p className="contact-detail-value normal-small">
+            <strong>{company.managingDirector}</strong>
+          </p>
+          <a href={`tel:${company.phone}`} className="contact-detail-value normal-small">
+            {company.phone}
+          </a>
+        </div>
+
+        <div className="contact-detail">
+          <h3 className="contact-detail-label normal-xsmall">
+            CEO
+          </h3>
+          <p className="contact-detail-value normal-small">
+            <strong>{company.ceo}</strong>
+          </p>
+          <a href={`tel:${company.phoneAlt}`} className="contact-detail-value normal-small">
+            {company.phoneAlt}
+          </a>
+        </div>
+                    <div className="contact-detail">
               <h3 className="contact-detail-label normal-xsmall">{contactCopy.email}</h3>
               <a className="contact-detail-value normal-small" href={`mailto:${company.email}`}>
                 {company.email}

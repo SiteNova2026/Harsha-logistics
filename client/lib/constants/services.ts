@@ -1,5 +1,5 @@
 export const servicesCopy = {
-  hero: { eyebrow: "Services", title: "Strength beyond borders.", description: "Six tightly-integrated services covering every leg of your shipment from port call to final mile." },
+  hero: { eyebrow: "Services", title: "Strength beyond borders.", description: "Nine tightly-integrated services covering every leg of your shipment from port call to final mile." },
   sectionTitle: "Our services",
   requestQuote: "Request a quote",
   viewService: "View service",
@@ -22,7 +22,7 @@ export const servicesCopy = {
         description: "Licensed CHA and documentation.",
       },
     },
-      {
+    {
       id: "02",
       label: "Ocean Freight",
       description:
@@ -85,6 +85,48 @@ export const servicesCopy = {
         eyebrow: "service 06",
         title: "International Courier",
         description: "Express delivery to 200+ destinations.",
+      },
+    },
+    {
+      id: "07",
+      label: "Overdimension Cargo Handling",
+      description:
+        "Specialized transportation and handling of oversized, heavy-lift and out-of-gauge cargo with customized logistics solutions.",
+      icon: "overdimension",
+      href: "/services/overdimension-cargo-handling",
+      page: {
+        eyebrow: "service 07",
+        title: "Overdimension Cargo Handling",
+        description:
+          "Reliable logistics solutions for oversized, heavy-lift and out-of-gauge cargo.",
+      },
+    },
+    {
+      id: "08",
+      label: "Reefer Container Cargo",
+      description:
+        "Temperature-controlled container shipping solutions to preserve the quality and freshness of perishable goods throughout transit.",
+      icon: "reefer",
+      href: "/services/reefer-container-cargo",
+      page: {
+        eyebrow: "service 08",
+        title: "Reefer Container Cargo",
+        description:
+          "Reliable temperature-controlled shipping for sensitive and perishable cargo worldwide.",
+      },
+    },
+    {
+      id: "09",
+      label: "Chemical Cargo Handling",
+      description:
+        "Specialized transportation and handling of chemical cargo with proper packaging, documentation and regulatory compliance.",
+      icon: "chemical",
+      href: "/services/chemical-cargo-handling",
+      page: {
+        eyebrow: "service 09",
+        title: "Chemical Cargo Handling",
+        description:
+          "Safe, compliant and reliable logistics solutions for chemical and hazardous cargo.",
       },
     },
   ],
@@ -392,6 +434,159 @@ export const InternationalCourierService = [
       {
         number: "05",
         title: "Delivered with proof of delivery.",
+      },
+    ],
+  },
+];
+
+export const OverdimensionCargoService = [
+  {
+    title: "Overdimension Cargo Handling",
+    description: "When the cargo is too large, too heavy or too complex for normal freight movement, we build tailored handling plans that factor in route restrictions, lifting methods, permits and site readiness.",
+    subtitle: "Key features",
+    subdescription: "What you get",
+    items: [
+      {
+        title: "Project survey & planning",
+        description: "Route surveys, dimensional checks and lifting strategy planning before dispatch.",
+      },
+      {
+        title: "Heavy-lift coordination",
+        description: "Specialist lifting, rigging and secure loading arrangements for out-of-gauge cargo.",
+      },
+      {
+        title: "Permit support",
+        description: "Coordination with authorities, carriers and route planners for compliant movement.",
+      },
+      {
+        title: "End-to-end handling",
+        description: "From port handling to inland delivery, every leg is monitored and documented.",
+      },
+    ],
+    stepsTitle: "How it works",
+    stepsIntro: "From enquiry to delivery",
+    steps: [
+      {
+        number: "01",
+        title: "Share dimensions, route, origin and destination details.",
+      },
+      {
+        number: "02",
+        title: "We assess feasibility, permits and the best handling method.",
+      },
+      {
+        number: "03",
+        title: "Cargo is pre-planned with lifting, escort and safety requirements.",
+      },
+      {
+        number: "04",
+        title: "Movement is coordinated with carriers, terminals and local authorities.",
+      },
+      {
+        number: "05",
+        title: "Cargo is delivered with milestone tracking and proof of safe handling.",
+      },
+    ],
+  },
+];
+
+export const ReeferContainerCargoService = [
+  {
+    title: "Reefer Container Cargo",
+    description: "Temperature-sensitive cargo demands precise cold-chain controls. We coordinate reefers, pre-cooling, monitoring and handoff procedures to preserve shipping quality across transit, customs and final delivery.",
+    subtitle: "Key features",
+    subdescription: "What you get",
+    items: [
+      {
+        title: "Cold-chain planning",
+        description: "Temperature profiles mapped to product requirements and routing duration.",
+      },
+      {
+        title: "Pre-cooling & monitoring",
+        description: "Pre-cooling, seal control and real-time reefer status updates throughout the journey.",
+      },
+      {
+        title: "Perishable cargo support",
+        description: "Handling for fruits, vegetables, dairy, seafood, pharma and other sensitive loads.",
+      },
+      {
+        title: "Customs & inland handoff",
+        description: "Fast customs coordination and streamlined handover to delivery partners at destination.",
+      },
+    ],
+    stepsTitle: "How it works",
+    stepsIntro: "From enquiry to delivery",
+    steps: [
+      {
+        number: "01",
+        title: "Share product type, temperature range and booking timeline.",
+      },
+      {
+        number: "02",
+        title: "We plan the reefer equipment, route and control points.",
+      },
+      {
+        number: "03",
+        title: "Cargo is loaded, sealed and pre-cooled in line with your requirements.",
+      },
+      {
+        number: "04",
+        title: "Temperature and condition are monitored from port to destination.",
+      },
+      {
+        number: "05",
+        title: "Delivery is coordinated with proof of condition and handover records.",
+      },
+    ],
+  },
+];
+
+export const ChemicalCargoHandlingService = [
+  {
+    title: "Chemical Cargo Handling",
+    description: "Hazardous and chemical cargo requires disciplined handling, documentation and regulatory compliance. We manage the safe movement of dangerous goods from collection to discharge with specialist support.",
+    subtitle: "Key features",
+    subdescription: "What you get",
+    items: [
+      {
+        title: "DG compliance",
+        description: "Correct packaging, labeling and documentation for dangerous goods shipments.",
+      },
+      {
+        title: "Safe packing & loading",
+        description: "Secure loading plans, segregation and handling controls for hazardous materials.",
+      },
+      {
+        title: "Authority coordination",
+        description: "Documentation support and liaison with port, carrier and regulatory stakeholders.",
+      },
+      {
+        title: "Risk-aware movement",
+        description: "Route and cargo planning built around safety, product profile and transit constraints.",
+      },
+    ],
+    stepsTitle: "How it works",
+    stepsIntro: "From enquiry to delivery",
+    steps: [
+      {
+        number: "01",
+        title: "Share product class, quantity, origin and destination details.",
+      },
+      {
+        number: "02",
+        title: "We assess compliance needs, packaging and carrier suitability.",
+      },
+      {
+        number: "03",
+        title: "Documentation and safety labeling are prepared before dispatch.",
+      },
+      {
+        number: "04",
+        title: "Cargo is loaded and monitored under strict handling procedures.",
+      },
+      {
+        number: "05",
+        title: "Arrival, customs and release are coordinated with complete reporting.",
       },
     ],
   },

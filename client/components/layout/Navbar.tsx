@@ -19,6 +19,9 @@ const servicesSubItems = [
   { label: servicesCopy.items[3]?.label, href: servicesCopy.items[3]?.href },
   { label: servicesCopy.items[4]?.label, href: servicesCopy.items[4]?.href },
   { label: servicesCopy.items[5]?.label, href: servicesCopy.items[5]?.href },
+  { label: servicesCopy.items[6]?.label, href: servicesCopy.items[6]?.href },
+  { label: servicesCopy.items[7]?.label, href: servicesCopy.items[7]?.href },
+  { label: servicesCopy.items[8]?.label, href: servicesCopy.items[8]?.href },
 ];
 
 export default function Navbar() {

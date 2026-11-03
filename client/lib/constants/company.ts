@@ -2,7 +2,7 @@ export const company = {
   name: "Harshavardhani Shipping & Forwarding India Pvt Ltd",
   shortName: "Harshavardhani",
   phone: "+91 98401 34080",
-  phoneAlt: "+91 93444 87022",
+  phoneAlt: "+91 93444 87822",
   email: "harshalogistics@gmail.com",
   emailAlt: "harshaindiapvtltd2018@gmail.com",
   managingDirector: "Harshavardhani Parthiban",

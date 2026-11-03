@@ -14,6 +14,9 @@ const serviceImages: Record<string, StaticImageData> = {
   "/services/road-rail": roadImage,
   "/services/warehouse": warehouseImage,
   "/services/international-courier": courierImage,
+  "/services/overdimension-cargo-handling": roadImage,
+  "/services/reefer-container-cargo": oceanImage,
+  "/services/chemical-cargo-handling": customsImage,
 };
 
 export function getRelatedServices(currentHref: string) {

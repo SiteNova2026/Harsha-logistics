@@ -69,7 +69,7 @@ export default function Footer() {
               <a href={`tel:${company.phoneAlt}`}>{company.phoneAlt}</a>
             </li>
               <li>
-                <a href={`mailto:${company.email}`}>{company.email}</a>
+                <a href={`mailto:${company.emailAlt}`}>{company.emailAlt}</a>
               </li>
             </ul>
           </div>
