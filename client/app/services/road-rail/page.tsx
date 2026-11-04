@@ -7,7 +7,7 @@ import { RoadRailService, servicesCopy } from "@/lib/constants/services";
 import { getRelatedServices } from "@/lib/constants/relatedServices";
 import { siteCopy } from "@/lib/constants/siteCopy";
 import { createPageMetadata } from "@/lib/constants/seo";
-import roadImage from "../../../public/images/container-yard.jpg";
+import roadImage from "../../../public/images/road_transport.png";
 import "../../styles/components/services.scss";
 
 export const metadata = createPageMetadata(

@@ -8,7 +8,7 @@ import { homeCopy } from "@/lib/constants/home";
 import airImage from "../../public/images/air-freight.jpg";
 import oceanImage from "../../public/images/svc-ocean.jpg";
 import customsImage from "../../public/images/svc-customs.jpg";
-import roadImage from "../../public/images/container-yard.jpg";
+import roadImage from "../../public/images/road_transport.png";
 import packagingImage from "../../public/images/svc-courier.jpg";
 import reeferImage from "../../public/images/reefer_container.png";
 import chemicalImage from "../../public/images/hazadorous_cargo_handling.png";

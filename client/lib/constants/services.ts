@@ -268,7 +268,7 @@ export const RoadRailService = [
   {
     title: "Road Transportation",
     description:
-      "We provide reliable and efficient road transportation solutions for seamless cargo movement across domestic supply chains. Our extensive transportation network connects major seaports, inland container depots (ICDs), manufacturing facilities, warehouses, and distribution centres. With flexible vehicle options, strategic route planning, and coordinated logistics operations, we ensure safe, timely, and cost-effective transportation for a wide range of cargo requirements.",
+      "We provide reliable and efficient road transportation solutions for all types of cargo, ensuring safe and timely delivery from ports to destinations. Our capabilities include 20FT and 40FT Reefer Containers, Flat Rack Containers, Low Bed Trailers and Over-Length Cargo transportation. With the capacity to handle 100+ containers simultaneously, we are equipped to manage large-scale logistics requirements with efficient fleet coordination, professional handling and dependable delivery schedules.",
 
     subtitle: "Our capabilities",
     subdescription: "Reliable road freight solutions for seamless cargo movement",
@@ -333,14 +333,14 @@ export const RoadRailService = [
 export const CustomsClearanceService = [
   {
     title: "Customs Clearance",
-    description: "Operating under CB Licence No. CHN/18/2011, our in-house customs team manages import and export documentation for all major Indian ports and airports. Accurate classification and complete paperwork keep your cargo moving without delays.",
+    description: "Simplifying global trade with reliable and hassle-free customs clearance solutions. Our experienced team handles all import and export customs formalities with precision and professionalism. From documentation and tariff classification to regulatory compliance and duty assessment, we ensure every shipment meets customs requirements. With our expertise across major Indian ports and airports, we help minimise delays and keep your cargo moving smoothly. Your cargo, our responsibility — ensuring seamless clearance at every step.",
     subtitle: "Our capabilities",
     subdescription: "Comprehensive customs solutions for seamless global trade",
     items: [
       {
         title: "Import & export filing",
         description: 
-          "End-to-end preparation and filing of Bills of Entry, Shipping Bills, and supporting customs documentation in accordance with applicable regulations.",
+          "End-to-end preparation and filling of Bills of Entry, Shipping Bills, and supporting customs documentation in accordance with applicable regulations.",
       },
       {
         title: "HSN Code classification",
