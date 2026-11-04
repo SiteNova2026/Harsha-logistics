@@ -149,10 +149,11 @@ export async function POST(req: NextRequest) {
       replyTo: { email, label: `Reply to ${name}` },
       submittedAt: quote.get("createdAt"),
     });
+const adminMail = process.env.ADMIN_MAIL || process.env.GODADDY_USER;
 
     await transporter.sendMail({
       from: process.env.Admin_Mail,
-      to: process.env.Admin_Mail,
+      to: adminMail,
       replyTo: email,
       subject: `New Quote Request - ${company}`,
       html,

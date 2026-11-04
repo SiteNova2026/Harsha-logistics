@@ -69,9 +69,11 @@ export async function POST(req: NextRequest) {
       submittedAt: contact.get("createdAt"),
     });
     // ---- send mail ----
+    const adminMail = process.env.ADMIN_MAIL || process.env.GODADDY_USER;
+
     await transporter.sendMail({
       from: process.env.Admin_Mail,
-      to: process.env.Admin_Mail,
+      to: adminMail,
       replyTo: email, // so you can hit "Reply" and answer the customer
       subject: `New Contact Form Submission - ${fullName}`,
       html,
