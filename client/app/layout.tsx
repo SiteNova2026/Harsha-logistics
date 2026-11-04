@@ -22,32 +22,53 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-  applicationName: company.shortName,
+  applicationName: company.name,
+  authors: [{ name: company.name }],
+  publisher: company.name,
+  category: "shipping and logistics",
+  keywords: [
+    "Harshavardhani Shipping & Forwarding",
+    "Harsha Logistics",
+    "shipping company in Chennai",
+    "freight forwarder in India",
+    "sea freight services Chennai",
+    "air cargo services Chennai",
+    "customs clearance Chennai",
+    "import export logistics India",
+    "warehousing Chennai",
+    "logistics company Chennai",
+  ],
   title: {
-    default: siteCopy.metadata.title,
-    template: "%s | Harsha Logistics",
+    default: company.name,
+    template: "%s | Harshavardhani Shipping & Forwarding",
   },
-    icons: {
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-IN": "/",
+    },
+  },
+  icons: {
     icon: "/images/logo_hq.png",
-  
   },
   description: siteCopy.metadata.description,
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Harsha Logistics",
-    title: siteCopy.metadata.title,
+    url: siteUrl.toString(),
+    siteName: company.name,
+    title: company.name,
     description: siteCopy.metadata.description,
     images: [
       {
         url: "/images/home-hero-ship.jpg",
-        alt: "Freight ship at port, representing Harsha Logistics services",
+        alt: "Harshavardhani Shipping & Forwarding India Pvt Ltd shipping and logistics services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteCopy.metadata.title,
+    title: company.name,
     description: siteCopy.metadata.description,
     images: ["/images/home-hero-ship.jpg"],
   },
@@ -70,14 +91,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@type": "LocalBusiness",
     "@id": new URL("/#business", siteUrl).toString(),
     name: company.name,
-    alternateName: "Harsha Logistics",
+    alternateName: ["Harsha Logistics", "Harshavardhani Shipping"],
     url: siteUrl.toString(),
     logo: new URL("/images/logo.png", siteUrl).toString(),
     image: new URL("/images/home-hero-ship.jpg", siteUrl).toString(),
     description: siteCopy.metadata.description,
     telephone: [company.phone, company.phoneAlt],
     email: company.email,
-    foundingDate: "2011",
+    foundingDate: "2004",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Old No. 107/108, New No 20/22, Armenian Street, 1st Floor",
@@ -86,14 +107,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       postalCode: "600001",
       addressCountry: "IN",
     },
-    areaServed: {
-      "@type": "Country",
-      name: "India",
-    },
+  areaServed: ["India", "Worldwide"],
   };
 
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang="en-IN" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} site-body`}>
         <script
           type="application/ld+json"

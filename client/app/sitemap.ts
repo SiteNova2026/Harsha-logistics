@@ -11,6 +11,9 @@ const routes = [
   "/services/ocean-freight",
   "/services/road-rail",
   "/services/warehouse",
+  "/services/chemical-cargo-handling",
+  "/services/reefer-container-cargo",
+  "/services/overdimensional-cargo-handling",
   "/contact",
   "/quote",
 ];
