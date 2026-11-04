@@ -10,11 +10,26 @@ function createTransporter(): Transporter {
         auth: { user: process.env.ZOHO_USER, pass: process.env.ZOHO_PASS },
       });
 
-    case "gmail":
+   case "gmail":
       return nodemailer.createTransport({
-        service: "gmail",
-        auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_PASS }, // Gmail App Password
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASS,
+        },
       });
+      case "godaddy":
+  return nodemailer.createTransport({
+    host: "smtpout.secureserver.net",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.GODADDY_USER,
+      pass: process.env.GODADDY_PASS,
+    },
+  });
 
     case "mailtrap":
       return nodemailer.createTransport({
