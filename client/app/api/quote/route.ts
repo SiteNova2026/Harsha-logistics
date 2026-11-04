@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/lib/db/mongodb";
 import Quote from "@/lib/models/Quote";
-import transporter from "@/lib/mail/mail";
+import transporter, { resolveSenderAddress } from "@/lib/mail/mail";
 import { renderEmail, EmailSection } from "@/components/mail/Emailtemplate";
 
 export const runtime = "nodejs";
@@ -149,10 +149,14 @@ export async function POST(req: NextRequest) {
       replyTo: { email, label: `Reply to ${name}` },
       submittedAt: quote.get("createdAt"),
     });
-const adminMail = process.env.ADMIN_MAIL || process.env.GODADDY_USER;
+    const adminMail = process.env.ADMIN_MAIL || process.env.GODADDY_USER || process.env.ZOHO_USER || process.env.GMAIL_USER;
+
+    if (!adminMail) {
+      throw new Error("No admin recipient email configured.");
+    }
 
     await transporter.sendMail({
-      from: process.env.Admin_Mail,
+      from: resolveSenderAddress(),
       to: adminMail,
       replyTo: email,
       subject: `New Quote Request - ${company}`,

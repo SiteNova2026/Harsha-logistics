@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/lib/db/mongodb";
 import Contact from "@/lib/models/Contact";
-import transporter from "@/lib/mail/mail";
+import transporter, { resolveSenderAddress } from "@/lib/mail/mail";
 import { renderEmail } from "@/components/mail/Emailtemplate";
 
 
@@ -69,10 +69,14 @@ export async function POST(req: NextRequest) {
       submittedAt: contact.get("createdAt"),
     });
     // ---- send mail ----
-    const adminMail = process.env.ADMIN_MAIL || process.env.GODADDY_USER;
+    const adminMail = process.env.ADMIN_MAIL || process.env.GODADDY_USER || process.env.ZOHO_USER || process.env.GMAIL_USER;
+
+    if (!adminMail) {
+      throw new Error("No admin recipient email configured.");
+    }
 
     await transporter.sendMail({
-      from: process.env.Admin_Mail,
+      from: resolveSenderAddress(),
       to: adminMail,
       replyTo: email, // so you can hit "Reply" and answer the customer
       subject: `New Contact Form Submission - ${fullName}`,
