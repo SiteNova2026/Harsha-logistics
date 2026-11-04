@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const configuredSiteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://harsha.sitenova.co.in";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.harshavardhanishipping.com";
 
 export const siteUrl = new URL(new URL(configuredSiteUrl).origin);
 
